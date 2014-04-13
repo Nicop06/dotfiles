@@ -5,7 +5,8 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-TERM="screen-256color"
+TERM="xterm-256color"
+[ -n "$TMUX" ] && export TERM=screen-256color
 
 shopt -s checkwinsize
 
