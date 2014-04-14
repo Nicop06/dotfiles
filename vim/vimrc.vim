@@ -14,7 +14,7 @@ Plugin 'majutsushi/tagbar'
 
 let mapleader = ","
 
-set pastetoggle=<F7>
+set pastetoggle=<F11>
 nmap <F8> :TagbarToggle<CR>
 nmap <F9> :NERDTreeToggle<CR>
 
