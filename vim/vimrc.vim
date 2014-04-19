@@ -39,6 +39,12 @@ let g:clang_user_options='|| exit 0'
 " For vim-latex
 set grepprg=grep\ -nH\ $*
 
+" Move on the displayed lines, not real lines
+noremap  <buffer> <silent> k gk
+noremap  <buffer> <silent> j gj
+noremap  <buffer> <silent> 0 g0
+noremap  <buffer> <silent> $ g$
+
 " Command to compile files
 command Gcc :!gcc % -o %:r && %:r
 
