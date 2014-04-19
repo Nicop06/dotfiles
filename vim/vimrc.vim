@@ -36,14 +36,17 @@ let g:clang_debug = 1
 let g:clang_library_path = '/usr/lib/'
 let g:clang_user_options='|| exit 0'
 
-" For vim-latex
-set grepprg=grep\ -nH\ $*
-
 " Move on the displayed lines, not real lines
 noremap  <buffer> <silent> k gk
 noremap  <buffer> <silent> j gj
 noremap  <buffer> <silent> 0 g0
 noremap  <buffer> <silent> $ g$
+
+" Vim-latex options
+let g:Tex_DefaultTargetFormat = 'pdf'
+let g:Tex_MultipleCompileFormats='pdf, aux'
+set grepprg=grep\ -nH\ $*
+let g:tex_flavor = "latex"
 
 " Command to compile files
 command Gcc :!gcc % -o %:r && %:r
