@@ -38,3 +38,5 @@ export EDITOR='/usr/bin/vim'
 [ -f /usr/share/doc/pkgfile/command-not-found.bash ] && source /usr/share/doc/pkgfile/command-not-found.bash
 
 [ -d $HOME/.gem/ruby/2.0.0/bin/ ] && PATH="$PATH:$HOME/.gem/ruby/2.0.0/bin/"
+
+alias search="grep -R --include=\*.{cpp,c,h}"
