@@ -14,6 +14,7 @@ Plugin 'altercation/vim-colors-solarized.git'
 Plugin 'ervandew/supertab'
 Plugin 'majutsushi/tagbar'
 Plugin 'Rip-Rip/clang_complete'
+Plugin 'editorconfig/editorconfig-vim'
 Plugin 'jcf/vim-latex'
 
 let mapleader = ","
