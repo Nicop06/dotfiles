@@ -42,14 +42,14 @@ let g:solarized_termcolors=256
 colorscheme solarized
 
 " Tags
-set tags+=~/.vim/tags/ctags
+" set tags+=~/.vim/tags/ctags
 
 " clang complete
-let g:clang_complete_auto = 1
-let g:clang_use_library = 1
-let g:clang_debug = 1
-let g:clang_library_path = '/usr/lib/'
-let g:clang_user_options='|| exit 0'
+"let g:clang_complete_auto = 1
+"let g:clang_use_library = 1
+"let g:clang_debug = 1
+"let g:clang_library_path = '/usr/lib/'
+"let g:clang_user_options='|| exit 0'
 
 " Move on the displayed lines, not real lines
 noremap  <buffer> <silent> k gk
