@@ -15,17 +15,19 @@ shopt -s checkwinsize
 #PS1='[\u@\h \w]\$ '
 PS1='\[\e[1;31m\][\[\e[32m\]\u@\h \[\e[34m\]\w\[\e[31m\]] \$\[\e[m\] '
 
-alias ls='ls --color=auto'
-alias dir='dir --color=auto'
-alias vdir='vdir --color=auto'
+alias ls='ls --color=always'
+alias dir='dir --color=always'
+alias vdir='vdir --color=always'
 
-alias grep='grep --color=auto'
-alias fgrep='fgrep --color=auto'
+alias grep='grep --color=always'
+alias fgrep='fgrep --color=always'
 alias egrep='egrep --color=auto'
 
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
+
+alias less='less -R'
 
 alias ssudo='sudo -sE'
 
