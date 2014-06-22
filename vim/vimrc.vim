@@ -1,3 +1,4 @@
+set nocompatible
 filetype off
 
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -31,8 +32,35 @@ Plugin 'rking/ag.vim'
 call vundle#end()
 filetype plugin indent on
 
+" Set tabs size and use spaces
+set tabstop=4
+set shiftwidth=4
+set expandtab
+set smarttab
+
+" Line numbers, search and command options
+set showcmd
+set number
+set showmatch
+set hlsearch
+set incsearch
+set ignorecase
+set smarttab
+set ruler
+
+" Insert mode options
+set backspace=2
+set autoindent
+set formatoptions=c,q,r,t
+
+" Enable syntax and set background
+set background=dark
+syntax on
+
+" Change leader to comma
 let mapleader = ","
 
+" Set shortcuts
 set pastetoggle=<F10>
 nmap <F8> :TagbarToggle<CR>
 nmap <F9> :NERDTreeToggle<CR>
