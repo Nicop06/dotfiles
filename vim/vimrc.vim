@@ -1,7 +1,9 @@
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+filetype off
 
-Plugin 'gmarik/vundle'
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+Plugin 'gmarik/Vundle.vim'
 Plugin 'jlanzarotta/bufexplorer'
 Plugin 'kien/ctrlp.vim'
 Plugin 'tpope/vim-fugitive'
@@ -16,6 +18,9 @@ Plugin 'majutsushi/tagbar'
 Plugin 'Rip-Rip/clang_complete'
 Plugin 'editorconfig/editorconfig-vim'
 Plugin 'jcf/vim-latex'
+
+call vundle#end()
+filetype plugin indent on
 
 let mapleader = ","
 
