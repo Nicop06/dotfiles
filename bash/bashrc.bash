@@ -39,7 +39,6 @@ export EDITOR='/usr/bin/vim'
 
 [ -f /usr/share/doc/pkgfile/command-not-found.bash ] && source /usr/share/doc/pkgfile/command-not-found.bash
 
-alias search="grep -R --include=\*.{cpp,c,h}"
 # GEM
 #[ -d $HOME/.gem/ruby/2.1.0/bin/ ] && PATH="$PATH:$HOME/.gem/ruby/2.1.0/bin/"
 #export GEM_HOME=$(ruby -e 'puts Gem.user_dir')
@@ -47,3 +46,6 @@ alias search="grep -R --include=\*.{cpp,c,h}"
 # RVM
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 [[ -r /usr/local/rvm/scripts/completion ]] && . /usr/local/rvm/scripts/completion
+
+# Bash-completion
+[ -r /usr/share/bash-completion/bash_completion ] && . /usr/share/bash-completion/bash_completion
