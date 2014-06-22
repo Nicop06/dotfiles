@@ -19,6 +19,14 @@ Plugin 'majutsushi/tagbar'
 Plugin 'Rip-Rip/clang_complete'
 Plugin 'editorconfig/editorconfig-vim'
 Plugin 'jcf/vim-latex'
+Plugin 'lepture/vim-jinja'
+Plugin 'sophacles/vim-bundle-mako'
+Plugin 'mattn/emmet-vim'
+Plugin 'davidhalter/jedi-vim'
+Plugin 'parkr/vim-jekyll'
+Plugin 'tpope/vim-rails'
+Plugin 'tpope/vim-bundler.git'
+Plugin 'rking/ag.vim'
 
 call vundle#end()
 filetype plugin indent on
