@@ -96,6 +96,11 @@ noremap  <buffer> <silent> j gj
 noremap  <buffer> <silent> 0 g0
 noremap  <buffer> <silent> $ g$
 
+" Customize emmet keymappings
+let g:user_emmet_expandabbr_key = '<c-e>'
+let g:user_emmet_expandword_key = '<c-e>'
+let g:user_emmet_wrap_with_abbreviation_key = '<c-e>'
+
 " Vim-latex options
 let g:Tex_DefaultTargetFormat = 'pdf'
 let g:Tex_MultipleCompileFormats='pdf, aux'
