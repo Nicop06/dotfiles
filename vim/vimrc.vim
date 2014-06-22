@@ -66,14 +66,3 @@ let g:tex_flavor = "latex"
 " Command to compile files
 command Gcc :!gcc % -o %:r && %:r
 
-" Search in the current directory
-function! FSearchl(pattern)
-    execute '!grep --color=auto -Rl ' .  a:pattern . ' --include=\*.{cpp,c,h}'
-endfunction
-
-function! FSearch(pattern)
-    execute '!grep --color=auto -R ' . a:pattern . ' --include=\*.{cpp,c,h}'
-endfunction
-
-command! -nargs=1 Search call FSearch(<f-args>)
-command! -nargs=1 Searchl call FSearchl(<f-args>)
