@@ -44,8 +44,8 @@ call vundle#end()
 filetype plugin indent on
 
 " Set tabs size and use spaces
-set tabstop=4
-set shiftwidth=4
+set tabstop=2
+set shiftwidth=2
 set expandtab
 set smarttab
 
@@ -109,6 +109,3 @@ let g:tex_flavor = "latex"
 
 " Command to compile files
 command Gcc :!gcc % -o %:r && %:r
-
-" Ruby
-autocmd Filetype ruby setlocal ts=2 sts=2 sw=2
