@@ -62,3 +62,6 @@ man() {
   LESS_TERMCAP_us=$(printf "\e[1;32m") \
    man "$@"
 }
+
+# Local bashrc not tracked in git
+[ -f ~/.bashrc_local ] && source ~/.bashrc_local
