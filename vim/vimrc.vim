@@ -39,6 +39,8 @@ Plugin 'parkr/vim-jekyll'
 Plugin 'tpope/vim-rails'
 Plugin 'tpope/vim-bundler.git'
 Plugin 'rking/ag.vim'
+Plugin 'xolox/vim-misc'
+Plugin 'xolox/vim-notes'
 
 call vundle#end()
 filetype plugin indent on
