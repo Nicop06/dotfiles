@@ -79,8 +79,8 @@ nmap <F8> :TagbarToggle<CR>
 nmap <F9> :NERDTreeToggle<CR>
 
 " Solarized theme
-let vundle_readme=expand('~/.vim/bundle/vim-colors-solarized/README.mkd')
-if !filereadable(vundle_readme)
+let solarized_readme=expand('~/.vim/bundle/vim-colors-solarized/README.mkd')
+if filereadable(solarized_readme)
     let g:solarized_termcolors=256
     colorscheme solarized
 endif
