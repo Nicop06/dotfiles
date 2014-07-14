@@ -70,6 +70,11 @@ set formatoptions=c,q,r,t
 set background=dark
 syntax on
 
+" Omni completion
+set omnifunc=syntaxcomplete#Complete
+let g:SuperTabDefaultCompletionType = "<c-X><c-O>"
+let g:SuperTabContextDefaultCompletionType = "<c-x><c-o>"
+
 " Change leader to comma
 let mapleader = ","
 
