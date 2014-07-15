@@ -30,7 +30,6 @@ Plugin 'ervandew/supertab'
 Plugin 'majutsushi/tagbar'
 Plugin 'Rip-Rip/clang_complete'
 Plugin 'editorconfig/editorconfig-vim'
-Plugin 'jcf/vim-latex'
 Plugin 'lepture/vim-jinja'
 Plugin 'sophacles/vim-bundle-mako'
 Plugin 'mattn/emmet-vim'
@@ -41,6 +40,7 @@ Plugin 'tpope/vim-bundler.git'
 Plugin 'rking/ag.vim'
 Plugin 'xolox/vim-misc'
 Plugin 'xolox/vim-notes'
+Plugin 'LaTeX-Box-Team/LaTeX-Box'
 
 call vundle#end()
 filetype plugin indent on
@@ -77,6 +77,7 @@ let g:SuperTabContextDefaultCompletionType = "<c-x><c-o>"
 
 " Change leader to comma
 let mapleader = ","
+let maplocalleader = ","
 
 " Set shortcuts
 set pastetoggle=<F10>
