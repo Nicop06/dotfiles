@@ -104,8 +104,6 @@ endif
 " Move on the displayed lines, not real lines
 noremap  <buffer> <silent> k gk
 noremap  <buffer> <silent> j gj
-noremap  <buffer> <silent> 0 g0
-noremap  <buffer> <silent> $ g$
 
 " Customize emmet keymappings
 let g:user_emmet_expandabbr_key = '<c-e>'
