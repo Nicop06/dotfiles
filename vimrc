@@ -2,47 +2,47 @@ set nocompatible
 filetype off
 
 " Set up vundle (source: http://erikzaadi.com/2012/03/19/auto-installing-vundle-from-your-vimrc/)
-let iCanHazVundle=1
 let vundle_readme=expand('~/.vim/bundle/Vundle.vim/README.md')
 if !filereadable(vundle_readme)
-    echo "Installing Vundle.."
-    echo ""
-    silent !mkdir -p ~/.vim/bundle
-    silent !git clone https://github.com/gmarik/Vundle.vim ~/.vim/bundle/Vundle.vim
-    let iCanHazVundle=0
+  echo "Installing Vundle.."
+  echo ""
+  silent !mkdir -p ~/.vim/bundle
+  silent !git clone https://github.com/gmarik/Vundle.vim ~/.vim/bundle/Vundle.vim
+
+else
+  set rtp+=~/.vim/bundle/Vundle.vim
+  call vundle#begin()
+
+  Plugin 'gmarik/Vundle.vim'
+  Plugin 'jlanzarotta/bufexplorer'
+  Plugin 'kien/ctrlp.vim'
+  Plugin 'tpope/vim-fugitive'
+  Plugin 'scrooloose/nerdcommenter'
+  Plugin 'scrooloose/nerdtree'
+  Plugin 'MarcWeber/vim-addon-mw-utils'
+  Plugin 'tomtom/tlib_vim'
+  Plugin 'garbas/vim-snipmate'
+  Plugin 'honza/vim-snippets'
+  Plugin 'altercation/vim-colors-solarized.git'
+  Plugin 'ervandew/supertab'
+  Plugin 'majutsushi/tagbar'
+  Plugin 'Rip-Rip/clang_complete'
+  Plugin 'editorconfig/editorconfig-vim'
+  Plugin 'lepture/vim-jinja'
+  Plugin 'sophacles/vim-bundle-mako'
+  Plugin 'mattn/emmet-vim'
+  Plugin 'davidhalter/jedi-vim'
+  Plugin 'parkr/vim-jekyll'
+  Plugin 'tpope/vim-rails'
+  Plugin 'tpope/vim-bundler.git'
+  Plugin 'rking/ag.vim'
+  Plugin 'xolox/vim-misc'
+  Plugin 'xolox/vim-notes'
+  Plugin 'LaTeX-Box-Team/LaTeX-Box'
+
+  call vundle#end()
 endif
 
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-
-Plugin 'gmarik/Vundle.vim'
-Plugin 'jlanzarotta/bufexplorer'
-Plugin 'kien/ctrlp.vim'
-Plugin 'tpope/vim-fugitive'
-Plugin 'scrooloose/nerdcommenter'
-Plugin 'scrooloose/nerdtree'
-Plugin 'MarcWeber/vim-addon-mw-utils'
-Plugin 'tomtom/tlib_vim'
-Plugin 'garbas/vim-snipmate'
-Plugin 'honza/vim-snippets'
-Plugin 'altercation/vim-colors-solarized.git'
-Plugin 'ervandew/supertab'
-Plugin 'majutsushi/tagbar'
-Plugin 'Rip-Rip/clang_complete'
-Plugin 'editorconfig/editorconfig-vim'
-Plugin 'lepture/vim-jinja'
-Plugin 'sophacles/vim-bundle-mako'
-Plugin 'mattn/emmet-vim'
-Plugin 'davidhalter/jedi-vim'
-Plugin 'parkr/vim-jekyll'
-Plugin 'tpope/vim-rails'
-Plugin 'tpope/vim-bundler.git'
-Plugin 'rking/ag.vim'
-Plugin 'xolox/vim-misc'
-Plugin 'xolox/vim-notes'
-Plugin 'LaTeX-Box-Team/LaTeX-Box'
-
-call vundle#end()
 filetype plugin indent on
 
 " Set tabs size and use spaces
@@ -87,8 +87,8 @@ nmap <F9> :NERDTreeToggle<CR>
 " Solarized theme
 let solarized_readme=expand('~/.vim/bundle/vim-colors-solarized/README.mkd')
 if filereadable(solarized_readme)
-    let g:solarized_termcolors=256
-    colorscheme solarized
+  let g:solarized_termcolors=256
+  colorscheme solarized
 endif
 
 " Tags
