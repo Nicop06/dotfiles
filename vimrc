@@ -102,8 +102,8 @@ endif
 "let g:clang_user_options='|| exit 0'
 
 " Move on the displayed lines, not real lines
-noremap  <buffer> <silent> k gk
-noremap  <buffer> <silent> j gj
+noremap <silent> k gk
+noremap <silent> j gj
 
 " Customize emmet keymappings
 let g:user_emmet_expandabbr_key = '<c-e>'
