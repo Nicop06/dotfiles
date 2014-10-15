@@ -13,31 +13,36 @@ else
   set rtp+=~/.vim/bundle/Vundle.vim
   call vundle#begin()
 
+  " Vundle
   Plugin 'gmarik/Vundle.vim'
+
+  " Base plugins
   Plugin 'jlanzarotta/bufexplorer'
-  Plugin 'kien/ctrlp.vim'
   Plugin 'tpope/vim-fugitive'
   Plugin 'scrooloose/nerdcommenter'
   Plugin 'scrooloose/nerdtree'
-  Plugin 'MarcWeber/vim-addon-mw-utils'
-  Plugin 'tomtom/tlib_vim'
-  Plugin 'garbas/vim-snipmate'
-  Plugin 'honza/vim-snippets'
-  Plugin 'altercation/vim-colors-solarized.git'
-  Plugin 'ervandew/supertab'
-  Plugin 'majutsushi/tagbar'
-  Plugin 'Rip-Rip/clang_complete'
-  Plugin 'editorconfig/editorconfig-vim'
-  Plugin 'lepture/vim-jinja'
-  Plugin 'sophacles/vim-bundle-mako'
-  Plugin 'mattn/emmet-vim'
-  Plugin 'davidhalter/jedi-vim'
-  Plugin 'parkr/vim-jekyll'
-  Plugin 'tpope/vim-rails'
-  Plugin 'tpope/vim-bundler.git'
+  Plugin 'kien/ctrlp.vim'
   Plugin 'rking/ag.vim'
+
+  " Colorscheme
+  Plugin 'altercation/vim-colors-solarized.git'
+
+  " EditorConfig
+  Plugin 'editorconfig/editorconfig-vim'
+
+  " Autocomplete
+  Plugin 'mattn/emmet-vim'
+  Plugin 'Valloric/YouCompleteMe'
+
+  " Snippets
+  Plugin 'SirVer/ultisnips'
+  Plugin 'honza/vim-snippets'
+
+  " Vim Note
   Plugin 'xolox/vim-misc'
   Plugin 'xolox/vim-notes'
+
+  " Latex
   Plugin 'LaTeX-Box-Team/LaTeX-Box'
 
   call vundle#end()
@@ -70,19 +75,15 @@ set formatoptions=c,q,r,t
 set background=dark
 syntax on
 
-" Omni completion
-set omnifunc=syntaxcomplete#Complete
-let g:SuperTabDefaultCompletionType = "<c-X><c-O>"
-let g:SuperTabContextDefaultCompletionType = "<c-x><c-o>"
-
 " Change leader to comma
 let mapleader = ","
 let maplocalleader = ","
 
 " Set shortcuts
-set pastetoggle=<F10>
+map <F5> :setlocal spell! spelllang=en_us<CR>
 nmap <F8> :TagbarToggle<CR>
 nmap <F9> :NERDTreeToggle<CR>
+set pastetoggle=<F10>
 
 " Solarized theme
 let solarized_readme=expand('~/.vim/bundle/vim-colors-solarized/README.mkd')
@@ -91,30 +92,19 @@ if filereadable(solarized_readme)
   colorscheme solarized
 endif
 
-" Tags
-" set tags+=~/.vim/tags/ctags
-
-" clang complete
-"let g:clang_complete_auto = 1
-"let g:clang_use_library = 1
-"let g:clang_debug = 1
-"let g:clang_library_path = '/usr/lib/'
-"let g:clang_user_options='|| exit 0'
-
 " Move on the displayed lines, not real lines
 noremap <silent> k gk
 noremap <silent> j gj
 
-" Customize emmet keymappings
+" Customize Emmet keymappings
 let g:user_emmet_expandabbr_key = '<c-e>'
 let g:user_emmet_expandword_key = '<c-e>'
 let g:user_emmet_wrap_with_abbreviation_key = '<c-e>'
 
-" Vim-latex options
-let g:Tex_DefaultTargetFormat = 'pdf'
-let g:Tex_MultipleCompileFormats='pdf, aux'
-set grepprg=grep\ -nH\ $*
-let g:tex_flavor = "latex"
+" UltiSnips config
+let g:UltiSnipsExpandTrigger="<c-c>"
+let g:UltiSnipsJumpForwardTrigger="<c-c>"
+let g:UltiSnipsJumpBackwardTrigger="<c-v>"
 
-" Command to compile files
-command Gcc :!gcc % -o %:r && %:r
+" YouCompleteMe
+let g:ycm_global_ycm_extra_conf = '~/.vim/.ycm_extra_conf.py'
