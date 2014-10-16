@@ -108,3 +108,6 @@ let g:UltiSnipsJumpBackwardTrigger="<c-v>"
 
 " YouCompleteMe
 let g:ycm_global_ycm_extra_conf = '~/.vim/.ycm_extra_conf.py'
+
+" Run Makefile
+nmap <leader>r :make! run<CR>
