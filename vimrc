@@ -85,12 +85,9 @@ nmap <F8> :TagbarToggle<CR>
 nmap <F9> :NERDTreeToggle<CR>
 set pastetoggle=<F10>
 
-" Solarized theme
-let solarized_readme=expand('~/.vim/bundle/vim-colors-solarized/README.mkd')
-if filereadable(solarized_readme)
-  let g:solarized_termcolors=256
-  colorscheme solarized
-endif
+" Colorscheme
+let g:solarized_termcolors=256
+colorscheme solarized
 
 " Move on the displayed lines, not real lines
 noremap <silent> k gk
