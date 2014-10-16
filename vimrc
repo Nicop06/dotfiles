@@ -19,10 +19,13 @@ else
   " Base plugins
   Plugin 'jlanzarotta/bufexplorer'
   Plugin 'tpope/vim-fugitive'
+  Plugin 'majutsushi/tagbar'
   Plugin 'scrooloose/nerdcommenter'
   Plugin 'scrooloose/nerdtree'
   Plugin 'kien/ctrlp.vim'
   Plugin 'rking/ag.vim'
+  Plugin 'scrooloose/syntastic'
+  Plugin 'airblade/vim-gitgutter'
 
   " Colorscheme
   Plugin 'altercation/vim-colors-solarized.git'
