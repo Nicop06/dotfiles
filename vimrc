@@ -107,4 +107,13 @@ let g:UltiSnipsJumpBackwardTrigger="<c-v>"
 let g:ycm_global_ycm_extra_conf = '~/.vim/.ycm_extra_conf.py'
 
 " Run Makefile
-nmap <leader>r :make! run<CR>
+nnoremap <leader>r :make! run<CR>
+
+" Improve tabs management
+nnoremap <leader>te :tabe<CR>
+nnoremap <leader>tc :tabclose<CR>
+nnoremap <leader>to :tabonly<CR>
+nnoremap <C-l>      :tabnext<CR>
+nnoremap <C-h>      :tabprevious<CR>
+nnoremap <c-k>      :execute 'silent! tabmove ' . tabpagenr()<CR>
+nnoremap <C-j>      :execute 'silent! tabmove ' . (tabpagenr()-2)<CR>
