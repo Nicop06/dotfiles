@@ -1,4 +1,3 @@
-#
 # ~/.bashrc
 #
 
@@ -39,10 +38,6 @@ export EDITOR='/usr/bin/vim'
 
 [ -f /usr/share/doc/pkgfile/command-not-found.bash ] && source /usr/share/doc/pkgfile/command-not-found.bash
 
-# GEM
-#[ -d $HOME/.gem/ruby/2.1.0/bin/ ] && PATH="$PATH:$HOME/.gem/ruby/2.1.0/bin/"
-#export GEM_HOME=$(ruby -e 'puts Gem.user_dir')
-
 # RVM
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 [[ -r /usr/local/rvm/scripts/completion ]] && . /usr/local/rvm/scripts/completion
@@ -62,6 +57,15 @@ man() {
   LESS_TERMCAP_us=$(printf "\e[1;32m") \
    man "$@"
 }
+
+# gpg-agent
+if [ -f "${HOME}/.gpg-agent-info" ]; then
+  . "${HOME}/.gpg-agent-info"
+  export GPG_AGENT_INFO
+  export SSH_AUTH_SOCK
+else
+  eval $(gpg-agent --daemon --write-env-file "${HOME}/.gpg-agent-info")
+fi
 
 # Local bashrc not tracked in git
 [ -f ~/.bashrc_local ] && source ~/.bashrc_local
