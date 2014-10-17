@@ -110,6 +110,9 @@ let g:UltiSnipsJumpBackwardTrigger="<c-v>"
 " YouCompleteMe
 let g:ycm_global_ycm_extra_conf = '~/.vim/.ycm_extra_conf.py'
 
+" LatexBox
+let g:LatexBox_viewer = "zathura"
+
 " Run Makefile
 nnoremap <leader>r :make! run<CR>
 
