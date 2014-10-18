@@ -59,7 +59,7 @@ man() {
 }
 
 # gpg-agent
-if [ -f "${HOME}/.gpg-agent-info" ]; then
+if [ -f "${HOME}/.gpg-agent-info" -a "$(pgrep gpg-agent)" ]; then
   . "${HOME}/.gpg-agent-info"
   export GPG_AGENT_INFO
   export SSH_AUTH_SOCK
