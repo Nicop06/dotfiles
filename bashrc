@@ -35,8 +35,8 @@ alias ssudo='sudo -sE'
 export EDITOR='/usr/bin/vim'
 
 # RVM
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
-[[ -r /usr/local/rvm/scripts/completion ]] && . /usr/local/rvm/scripts/completion
+#[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
+#[[ -r /usr/local/rvm/scripts/completion ]] && . /usr/local/rvm/scripts/completion
 
 # Bash-completion
 [ -r /usr/share/bash-completion/bash_completion ] && . /usr/share/bash-completion/bash_completion

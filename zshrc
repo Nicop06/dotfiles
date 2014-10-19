@@ -112,5 +112,5 @@ else
 fi
 
 # RVM
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
-[[ -r /usr/local/rvm/scripts/completion ]] && . /usr/local/rvm/scripts/completion
+#[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
+#[[ -r /usr/local/rvm/scripts/completion ]] && . /usr/local/rvm/scripts/completion
