@@ -109,6 +109,7 @@ let g:UltiSnipsJumpBackwardTrigger="<c-v>"
 
 " YouCompleteMe
 let g:ycm_global_ycm_extra_conf = '~/.vim/.ycm_extra_conf.py'
+nnoremap <leader>jd :YcmCompleter GoTo<CR>
 
 " LatexBox
 let g:LatexBox_viewer = "zathura"
