@@ -10,7 +10,10 @@ local beautiful = require("beautiful")
 -- Notification library
 local naughty = require("naughty")
 local menubar = require("menubar")
+-- Volume widget
 require("volume")
+-- Event handler
+require("event")
 
 -- {{{ Error handling
 -- Check if awesome encountered an error during startup and fell back to
