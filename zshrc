@@ -64,7 +64,9 @@ alias less='less -R'
 
 alias ssudo='sudo -sE'
 
+# Define editor but keep emacs bindings
 export EDITOR='/usr/bin/vim'
+bindkey -e
 
 # Command not found
 source /usr/share/doc/pkgfile/command-not-found.zsh
