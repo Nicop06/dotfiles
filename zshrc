@@ -13,7 +13,7 @@ setopt nohashdirs
 setopt HIST_IGNORE_DUPS
 setopt HIST_IGNORE_SPACE
 export HISTFILE=~/.zhistory
-export HISTSIZE=2000
+export SAVEHIST=2000
 
 # Help
 autoload -U run-help
