@@ -38,10 +38,6 @@ setopt autopushd pushdsilent pushdtohome
 setopt pushdignoredups
 setopt pushdminus
 
-# Term name
-TERM="xterm-256color"
-[ -n "$TMUX" ] && export TERM=screen-256color
-
 # Prompt
 autoload -U colors && colors
 PROMPT="%{$fg_bold[red]%}%n%{$fg_bold[cyan]%}@%{$fg_bold[blue]%}%m %{$fg_bold[yellow]%}%~ %{$fg_bold[green]%}%# %{$reset_color%}"
