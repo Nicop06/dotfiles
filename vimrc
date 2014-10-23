@@ -83,7 +83,7 @@ let mapleader = ","
 let maplocalleader = ","
 
 " Set shortcuts
-map <F5> :setlocal spell! spelllang=en_us<CR>
+map <F5> :setlocal spell! spelllang=en_us<CR>:syntax spell toplevel<CR>
 nmap <F8> :TagbarToggle<CR>
 nmap <F9> :NERDTreeToggle<CR>
 set pastetoggle=<F10>
