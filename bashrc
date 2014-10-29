@@ -56,7 +56,7 @@ man() {
 }
 
 # gpg-agent
-if [ -f "${HOME}/.gpg-agent-info" -a "$(pgrep gpg-agent)" ]; then
+if [ -f "${HOME}/.gpg-agent-info" ] && pgrep -x gpg-agent > /dev/null; then
   . "${HOME}/.gpg-agent-info"
   export GPG_AGENT_INFO
   export SSH_AUTH_SOCK

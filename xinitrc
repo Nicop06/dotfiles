@@ -15,7 +15,8 @@ xrdb .Xresources
 xcompmgr -c &
 xscreensaver -nosplash &
 mpd &
-[ ! $(pgrep urxvtd) ] && urxvtd &
+pgrep -x urxvtd > /dev/null || urxvtd &
+pgrep -x lightsOn.sh > /dev/null || lightsOn.sh 120 &
 numlockx &
 gpg-agent --daemon --write-env-file "${HOME}/.gpg-agent-info"
 exec awesome
