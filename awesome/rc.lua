@@ -290,8 +290,11 @@ globalkeys = awful.util.table.join(
           awful.util.spawn("amixer set Master 9%-")
           update_volume(volume_widget)
         end),
-    awful.key({ }, "XF86AudioMute", function ()
-         awful.util.spawn("amixer sset Master toggle") end),
+    awful.key({ }, "XF86AudioMute",
+        function ()
+          awful.util.spawn("amixer sset Master toggle")
+          update_volume(volume_widget)
+        end),
     awful.key({ }, "XF86AudioNext", function ()
          awful.util.spawn("mpc next") end),
     awful.key({ }, "XF86AudioPrev", function ()
