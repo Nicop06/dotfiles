@@ -279,7 +279,7 @@ globalkeys = awful.util.table.join(
     awful.key({ modkey }, "p", function() menubar.show() end),
 
     -- XScreenSaver
-    awful.key({ modkey, "Control" }, "l", function () awful.util.spawn("xscreensaver-command -lock") end),
+    awful.key({ modkey, "Alt" }, "l", function () awful.util.spawn("xscreensaver-command -lock") end),
     awful.key({ }, "XF86AudioRaiseVolume",
         function ()
           awful.util.spawn("amixer set Master 9%+")
