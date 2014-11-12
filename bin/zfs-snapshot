@@ -1,0 +1,66 @@
+#!/bin/sh
+
+prefix="auto"
+format="+%Y%m%d%H%M"
+pools="data"
+data_recursive="yes"
+data_rotation="60:5 1440:60 10080:1440 43200:10080 525600:43200"
+
+for pool in $pools
+do
+  eval rotations=\${${pool}_rotation}
+  eval recursive=\${${pool}_recursive}
+
+  i=0
+  exp="^([0-9]+):([0-9]+)$"
+  for rotation in $rotations
+  do
+    eval maxtime$i=$(echo $rotation | sed -E "s/$exp/\1/")
+    eval period$i=$(echo $rotation | sed -E "s/$exp/\2/")
+    i=$(($i+1))
+  done
+
+  names=$(zfs list -o name -t snapshot | grep "^$pool@${prefix}-" | sort -n -r)
+
+  args=""
+
+  if [ $recursive = "yes" ]
+  then
+    args="-r"
+  fi
+
+  name="$pool@${prefix}-$(date $format)"
+  zfs snapshot $args $name
+  zfs hold $args ${prefix} $name
+
+  lasttime=$(date +%s)
+  starttime=$lasttime
+  maxtime=$maxtime0
+  period=$period0
+
+  i=0
+  for name in $names
+  do
+    time=$(date -j $(echo $name | sed -E "s/^$pool@${prefix}-([0-9]{12})$/\1/") +%s)
+    if [ ! -z $maxtime ]
+    then
+      while [ $(( $starttime - $maxtime * 60 )) -gt $time ]
+      do
+        i=$(($i+1))
+        eval maxtime=\${maxtime$i}
+        eval period=\${period$i}
+
+        [ -z $period ] && period=0
+        [ -z $maxtime ] && break
+      done
+    fi
+
+    if [ $time -gt $(( $lasttime - $period * 60 )) ]
+    then
+      zfs release $args ${prefix} $name
+      zfs destroy $args $name
+    else
+      lasttime=$time
+    fi
+  done
+done
