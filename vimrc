@@ -31,7 +31,7 @@ else
   Plugin 'altercation/vim-colors-solarized.git'
 
   " EditorConfig
-  Plugin 'editorconfig/editorconfig-vim'
+  "Plugin 'editorconfig/editorconfig-vim'
 
   " Autocomplete
   Plugin 'mattn/emmet-vim'
