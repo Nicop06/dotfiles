@@ -52,3 +52,40 @@ URxvt*scrollstyle:plain
 URxvt*scrollBar: false
 URxvt*cursorBlink: true
 URxvt*cursorUnderline: true
+
+!xterm color scheme
+
+xterm*background: #1C1C1C
+xterm*foreground: #DEDEDE
+
+xterm*colorUL: #86a2b0
+
+! black
+xterm*color0  : #2E3436
+xterm*color8  : #555753
+! red
+xterm*color1  : #CC0000
+xterm*color9  : #EF2929
+! green
+xterm*color2  : #4E9A06
+xterm*color10 : #8AE234
+! yellow
+xterm*color3  : #C4A000
+xterm*color11 : #FCE94F
+! blue
+xterm*color4  : #3465A4
+xterm*color12 : #729FCF
+! magenta
+xterm*color5  : #75507B
+xterm*color13 : #AD7FA8
+! cyan
+xterm*color6  : #06989A
+xterm*color14 : #34E2E2
+! white
+xterm*color7  : #D3D7CF
+xterm*color15 : #EEEEEC
+
+!xterm fonts: 
+
+xterm*faceName: Monospace:size=10:antialias=true
+xterm*font: 8x13
