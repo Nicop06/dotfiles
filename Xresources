@@ -41,7 +41,7 @@ URxvt*boldFont: xft:Monospace:bold:pixelsize=12
 
 !enabling clickable links:
 
-URxvt.perl-ext:         default,matcher,clipboard
+URxvt.perl-ext:         default,matcher,clipboard,selection-to-clipboard
 URxvt.url-launcher:     /usr/bin/firefox
 URxvt.matcher.button:   1
 
