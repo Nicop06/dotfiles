@@ -62,6 +62,7 @@ alias ssudo='sudo -sE'
 
 # Define editor but keep emacs bindings
 export EDITOR='/usr/bin/vim'
+export PAGER='/usr/bin/less -R'
 bindkey -e
 
 # Command not found
@@ -88,6 +89,7 @@ source ~/.zkbd/$TERM-:0.0 # may be different - check where zkbd saved the config
 [[ -n ${key[Right]} ]] && bindkey "${key[Right]}" forward-char
 
 # Colored man
+export GROFF_NO_SGR=1
 man() {
  env \
   LESS_TERMCAP_mb=$(printf "\e[1;31m") \
