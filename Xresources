@@ -38,7 +38,6 @@ URxvt*color15 : #EEEEEC
 URxvt*font: xft:Monospace:pixelsize=12
 URxvt*boldFont: xft:Monospace:bold:pixelsize=12
 
-
 !enabling clickable links:
 
 URxvt.perl-ext:         default,matcher,clipboard,selection-to-clipboard
@@ -52,6 +51,9 @@ URxvt*scrollstyle:plain
 URxvt*scrollBar: false
 URxvt*cursorBlink: true
 URxvt*cursorUnderline: true
+
+!urxvt disable printing
+URxvt.print-pipe: "cat > /dev/null"
 
 !xterm color scheme
 
