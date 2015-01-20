@@ -114,3 +114,9 @@ fi
 # RVM
 #[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 #[[ -r /usr/local/rvm/scripts/completion ]] && . /usr/local/rvm/scripts/completion
+
+# Virtualenvwrapper
+export WORKON_HOME=~/.envs
+virtualenvwrapper() {
+  source /usr/bin/virtualenvwrapper.sh
+}
