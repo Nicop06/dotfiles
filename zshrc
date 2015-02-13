@@ -116,7 +116,7 @@ fi
 #[[ -r /usr/local/rvm/scripts/completion ]] && . /usr/local/rvm/scripts/completion
 
 # Virtualenvwrapper
-export WORKON_HOME=~/.envs
+export WORKON_HOME=~/.virtualenvs
 virtualenvwrapper() {
   source /usr/bin/virtualenvwrapper.sh
 }
