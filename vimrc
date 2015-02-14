@@ -24,8 +24,11 @@ else
   Plugin 'scrooloose/nerdtree'
   Plugin 'kien/ctrlp.vim'
   Plugin 'rking/ag.vim'
+
+  " Hints
   Plugin 'scrooloose/syntastic'
   Plugin 'airblade/vim-gitgutter'
+  Plugin 'bling/vim-airline'
 
   " Colorscheme
   Plugin 'altercation/vim-colors-solarized.git'
@@ -73,6 +76,9 @@ set ruler
 set backspace=2
 set autoindent
 set formatoptions=c,q,r,t
+
+" Status line
+set laststatus=2
 
 " Enable syntax and set background
 set background=dark
