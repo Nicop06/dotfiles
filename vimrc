@@ -128,6 +128,6 @@ nnoremap <leader>te :tabe<CR>
 nnoremap <leader>tc :tabclose<CR>
 nnoremap <leader>to :tabonly<CR>
 nnoremap <C-n>      :tabnext<CR>
-nnoremap <C-p>      :tabprevious<CR>
+nnoremap <C-m>      :tabprevious<CR>
 nnoremap <c-k>      :execute 'silent! tabmove ' . tabpagenr()<CR>
 nnoremap <C-j>      :execute 'silent! tabmove ' . (tabpagenr()-2)<CR>
