@@ -115,6 +115,7 @@ let g:UltiSnipsJumpBackwardTrigger="<c-v>"
 
 " YouCompleteMe
 let g:ycm_global_ycm_extra_conf = '~/.vim/.ycm_extra_conf.py'
+let g:ycm_confirm_extra_conf = 0
 nnoremap <leader>jd :YcmCompleter GoTo<CR>
 
 " LatexBox
