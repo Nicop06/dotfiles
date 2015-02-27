@@ -24,6 +24,7 @@ else
   Plugin 'scrooloose/nerdtree'
   Plugin 'kien/ctrlp.vim'
   Plugin 'rking/ag.vim'
+  Plugin 'godlygeek/tabular'
 
   " Hints
   Plugin 'scrooloose/syntastic'
