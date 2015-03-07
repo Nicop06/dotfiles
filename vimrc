@@ -1,59 +1,51 @@
 set nocompatible
 filetype off
 
-" Set up vundle (source: http://erikzaadi.com/2012/03/19/auto-installing-vundle-from-your-vimrc/)
-let vundle_readme=expand('~/.vim/bundle/Vundle.vim/README.md')
-if !filereadable(vundle_readme)
-  echo "Installing Vundle.."
-  echo ""
-  silent !mkdir -p ~/.vim/bundle
-  silent !git clone https://github.com/gmarik/Vundle.vim ~/.vim/bundle/Vundle.vim
+" Vim plugins
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
 
-else
-  set rtp+=~/.vim/bundle/Vundle.vim
-  call vundle#begin()
+" Vundle
+Plugin 'gmarik/Vundle.vim'
 
-  " Vundle
-  Plugin 'gmarik/Vundle.vim'
+" Base plugins
+Plugin 'jlanzarotta/bufexplorer'
+Plugin 'tpope/vim-fugitive'
+Plugin 'majutsushi/tagbar'
+Plugin 'scrooloose/nerdcommenter'
+Plugin 'scrooloose/nerdtree'
+Plugin 'kien/ctrlp.vim'
+Plugin 'rking/ag.vim'
+Plugin 'godlygeek/tabular'
 
-  " Base plugins
-  Plugin 'jlanzarotta/bufexplorer'
-  Plugin 'tpope/vim-fugitive'
-  Plugin 'majutsushi/tagbar'
-  Plugin 'scrooloose/nerdcommenter'
-  Plugin 'scrooloose/nerdtree'
-  Plugin 'kien/ctrlp.vim'
-  Plugin 'rking/ag.vim'
-  Plugin 'godlygeek/tabular'
+" Hints
+Plugin 'scrooloose/syntastic'
+Plugin 'airblade/vim-gitgutter'
+Plugin 'bling/vim-airline'
 
-  " Hints
-  Plugin 'scrooloose/syntastic'
-  Plugin 'airblade/vim-gitgutter'
-  Plugin 'bling/vim-airline'
+" Colorscheme
+Plugin 'altercation/vim-colors-solarized.git'
 
-  " Colorscheme
-  Plugin 'altercation/vim-colors-solarized.git'
+" EditorConfig
+"Plugin 'editorconfig/editorconfig-vim'
 
-  " EditorConfig
-  "Plugin 'editorconfig/editorconfig-vim'
+" Autocomplete
+Plugin 'mattn/emmet-vim'
+Plugin 'Valloric/YouCompleteMe'
 
-  " Autocomplete
-  Plugin 'mattn/emmet-vim'
-  Plugin 'Valloric/YouCompleteMe'
+" Snippets
+Plugin 'SirVer/ultisnips'
+Plugin 'honza/vim-snippets'
 
-  " Snippets
-  Plugin 'SirVer/ultisnips'
-  Plugin 'honza/vim-snippets'
+" Vim Note
+Plugin 'xolox/vim-misc'
+Plugin 'xolox/vim-notes'
 
-  " Vim Note
-  Plugin 'xolox/vim-misc'
-  Plugin 'xolox/vim-notes'
+" Latex
+Plugin 'LaTeX-Box-Team/LaTeX-Box'
 
-  " Latex
-  Plugin 'LaTeX-Box-Team/LaTeX-Box'
+call vundle#end()
 
-  call vundle#end()
-endif
 
 filetype plugin indent on
 
