@@ -6,8 +6,8 @@ promptinit
 zstyle ':completion:*' menu select
 setopt autocd
 
-# Disable hash
-setopt nohashdirs
+# Disable terminal stop
+stty -ixon
 
 # History
 setopt HIST_IGNORE_DUPS
