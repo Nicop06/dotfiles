@@ -97,9 +97,9 @@ noremap <silent> k gk
 noremap <silent> j gj
 
 " Customize Emmet keymappings
-let g:user_emmet_expandabbr_key = '<c-e>'
-let g:user_emmet_expandword_key = '<c-e>'
-let g:user_emmet_wrap_with_abbreviation_key = '<c-e>'
+let g:user_emmet_expandabbr_key = '<c-h>'
+let g:user_emmet_expandword_key = '<c-h>'
+let g:user_emmet_wrap_with_abbreviation_key = '<c-h>'
 
 " UltiSnips config
 let g:UltiSnipsExpandTrigger="<c-c>"
@@ -122,6 +122,6 @@ nnoremap <leader>te :tabe<CR>
 nnoremap <leader>tc :tabclose<CR>
 nnoremap <leader>to :tabonly<CR>
 nnoremap <C-n>      :tabnext<CR>
-nnoremap <C-h>      :tabprevious<CR>
+nnoremap <C-m>      :tabprevious<CR>
 nnoremap <C-k>      :execute 'silent! tabmove ' . tabpagenr()<CR>
 nnoremap <C-j>      :execute 'silent! tabmove ' . (tabpagenr()-2)<CR>
