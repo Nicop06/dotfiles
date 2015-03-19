@@ -61,7 +61,7 @@ set number
 set showmatch
 set hlsearch
 set incsearch
-set ignorecase
+set smartcase
 set smarttab
 set ruler
 
