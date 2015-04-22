@@ -32,6 +32,7 @@ Plugin 'altercation/vim-colors-solarized.git'
 " Autocomplete
 Plugin 'mattn/emmet-vim'
 Plugin 'Valloric/YouCompleteMe'
+Plugin 'vim-scripts/CCTree'
 
 " Snippets
 Plugin 'SirVer/ultisnips'
