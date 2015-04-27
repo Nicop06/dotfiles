@@ -11,14 +11,20 @@ if [ -d /etc/X11/xinit/xinitrc.d ]; then
   unset f
 fi
 
+# Read Xressources
 xrdb .Xresources
-xset +fp /usr/share/fonts/corefonts
+
+# Launch X applications
 xcompmgr -c &
 xscreensaver -nosplash &
+
+# Launch desktop daemons
 mpd &
 pgrep -x urxvtd > /dev/null || urxvtd &
 pgrep -x lightsOn.sh > /dev/null || $HOME/bin/lightsOn.sh 120 &
 numlockx &
+
+# Launch gpg daemon
 gpg-agent --daemon --write-env-file "${HOME}/.gpg-agent-info"
 
 session=${1:-awesome}
