@@ -56,12 +56,11 @@ man() {
 }
 
 # gpg-agent
-if [ -f "${HOME}/.gpg-agent-info" ] && pgrep -x gpg-agent > /dev/null; then
-  . "${HOME}/.gpg-agent-info"
-  export GPG_AGENT_INFO
-  export SSH_AUTH_SOCK
+if pgrep -x gpg-agent > /dev/null; then
+  export GPG_AGENT_INFO="$HOME/.gnupg/S.gpg-agent"
+  export SSH_AUTH_SOCK="$HOME/.gnupg/S.gpg-agent.ssh"
 else
-  eval $(gpg-agent --daemon --write-env-file "${HOME}/.gpg-agent-info")
+  eval $(gpg-agent --daemon)
 fi
 
 # Local bashrc not tracked in git
