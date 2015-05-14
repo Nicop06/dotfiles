@@ -25,7 +25,7 @@ pgrep -x lightsOn.sh > /dev/null || $HOME/bin/lightsOn.sh 120 &
 numlockx &
 
 # Launch gpg daemon
-gpg-agent --daemon --write-env-file "${HOME}/.gpg-agent-info"
+gpg-agent --daemon
 
 session=${1:-awesome}
 
