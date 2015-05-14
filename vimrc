@@ -10,7 +10,6 @@ Plugin 'gmarik/Vundle.vim'
 
 " Base plugins
 Plugin 'jlanzarotta/bufexplorer'
-Plugin 'tpope/vim-fugitive'
 Plugin 'majutsushi/tagbar'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'scrooloose/nerdtree'
@@ -18,9 +17,14 @@ Plugin 'kien/ctrlp.vim'
 Plugin 'rking/ag.vim'
 Plugin 'godlygeek/tabular'
 
+" Version control software
+Plugin 'airblade/vim-gitgutter'
+Plugin 'tpope/vim-fugitive'
+Plugin 'vim-scripts/vcscommand.vim'
+Plugin 'mhinz/vim-signify'
+
 " Hints
 Plugin 'scrooloose/syntastic'
-Plugin 'airblade/vim-gitgutter'
 Plugin 'bling/vim-airline'
 
 " Colorscheme
