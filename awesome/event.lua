@@ -18,13 +18,3 @@ function mcabber_event_hook(kind, direction, jid, msg)
     end
 end
 -- }}}
-
-client.connect_signal("focus", function(c)
-  if c.name == "plugin-container" or c.name == "exe" then
-    flash_client = c
-    mt = timer({timeout=0.5})
-    mt:connect_signal("timeout", function() flash_client.fullscreen = true
-    mt:stop() end)
-    mt:start()
-  end
-end)
