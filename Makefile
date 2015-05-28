@@ -16,6 +16,7 @@ install:
 	ln -s $(DOTFILES)/bashrc $(HOME)/.bashrc || true
 	ln -s $(DOTFILES)/awesome $(CONFIG)/awesome || true
 	ln -s $(DOTFILES)/openbox $(CONFIG)/openbox || true
+	ln -s $(DOTFILES)/fbpanel $(CONFIG)/fbpanel || true
 	ln -s $(DOTFILES)/weechat $(HOME)/.weechat || true
 
 installvim: ; @which git > /dev/null
