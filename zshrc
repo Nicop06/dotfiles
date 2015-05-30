@@ -20,11 +20,12 @@ autoload -U run-help
 autoload run-help-git
 autoload run-help-svn
 autoload run-help-svk
-unalias run-help
+unalias run-help 2> /dev/null
 alias help=run-help
 
 # Dirstack
 DIRSTACKFILE="$HOME/.cache/zsh/dirs"
+[ -e ${DIRSTACKFILE%/*} ] || mkdir -p ${DIRSTACKFILE%/*}
 if [[ -f $DIRSTACKFILE ]] && [[ $#dirstack -eq 0 ]]; then
   dirstack=( ${(f)"$(< $DIRSTACKFILE)"} )
 fi
@@ -74,7 +75,7 @@ bindkey -e
 
 # Key binding
 autoload zkbd
-source ~/.zkbd/$TERM-:0.0 # may be different - check where zkbd saved the configuration:
+[ -e ~/.zkbd/$TERM-:0.0 ] && source ~/.zkbd/$TERM-:0.0 # may be different - check where zkbd saved the configuration:
 
 [[ -n ${key[Backspace]} ]] && bindkey "${key[Backspace]}" backward-delete-char
 [[ -n ${key[Insert]} ]] && bindkey "${key[Insert]}" overwrite-mode
