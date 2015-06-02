@@ -33,7 +33,7 @@ URxvt*color14 : #34E2E2
 URxvt*color7  : #D3D7CF
 URxvt*color15 : #EEEEEC
 
-!urxvt fonts: 
+!urxvt fonts:
 
 URxvt*font: xft:Monospace:pixelsize=12
 URxvt*boldFont: xft:Monospace:bold:pixelsize=12
@@ -54,6 +54,10 @@ URxvt*cursorUnderline: true
 
 !urxvt disable printing
 URxvt.print-pipe: "cat > /dev/null"
+
+!urxvt as login shell
+URxvt*loginShell: true
+
 
 !xterm color scheme
 
@@ -87,7 +91,7 @@ xterm*color14 : #34E2E2
 xterm*color7  : #D3D7CF
 xterm*color15 : #EEEEEC
 
-!xterm fonts: 
+!xterm fonts:
 
 xterm*faceName: Monospace:size=10:antialias=true
 xterm*font: 8x13
