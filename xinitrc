@@ -19,7 +19,7 @@ xcompmgr -c &
 xscreensaver -nosplash &
 
 # Launch desktop daemons
-mpd &
+mpd
 pgrep -x urxvtd > /dev/null || urxvtd &
 pgrep -x lightsOn.sh > /dev/null || $HOME/bin/lightsOn.sh 120 &
 numlockx &
@@ -54,4 +54,3 @@ case $session in
     # No known session, try to run it as command
     *) exec $1;;
 esac
-
