@@ -13,6 +13,7 @@ fi
 
 # Read Xressources
 xrdb .Xresources
+xset r rate 200 40
 
 # Launch X applications
 xcompmgr -c &
