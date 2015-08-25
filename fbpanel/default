@@ -121,7 +121,7 @@ Global {
     setpartialstrut = true
     autohide = false
     heightWhenHidden = 2
-    roundcorners = true
+    roundcorners = false
     roundcornersradius = 7
     layer = none
     MaxElemHeight = 32
@@ -153,7 +153,7 @@ Plugin {
             
 	    item {
 		name = Terminal
-		icon = terminal
+		icon = utilities-terminal
 		action = urxvt
 	    }
             item {
@@ -196,12 +196,12 @@ Plugin {
     type = launchbar
     config {
         button {
-            icon = file-manager
+            icon = system-file-manager
             tooltip = File Manager
             action = pcmanfm
         }
         button {
-            icon = terminal
+            icon = utilities-terminal
             tooltip = Terminal
             action = urxvt
         }
@@ -224,7 +224,7 @@ Plugin {
 Plugin {
     type = wincmd
     config {
-        icon = gnome-fs-desktop
+        icon = user-desktop
         tooltip = Left click to iconify all windows. Middle click to shade them.
     }
 }
