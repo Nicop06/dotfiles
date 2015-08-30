@@ -129,3 +129,9 @@ nnoremap <C-n>      :tabnext<CR>
 nnoremap <C-h>      :tabprevious<CR>
 nnoremap <C-k>      :execute 'silent! tabmove ' . tabpagenr()<CR>
 nnoremap <C-j>      :execute 'silent! tabmove ' . (tabpagenr()-2)<CR>
+
+" GNU Global
+if filereadable("GTAGS")
+  set csprg=gtags-cscope
+  cs add GTAGS
+endif
