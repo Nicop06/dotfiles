@@ -64,7 +64,7 @@ alias ssudo='sudo -sE'
 
 # Define editor but keep emacs bindings
 export EDITOR='/usr/bin/vim'
-export PAGER='/usr/bin/less -R'
+export PAGER='/usr/bin/less'
 bindkey -e
 
 # Command not found
@@ -91,18 +91,21 @@ autoload zkbd
 [[ -n ${key[Right]} ]] && bindkey "${key[Right]}" forward-char
 
 # Colored man
-export GROFF_NO_SGR=1
-man() {
- env \
-  LESS_TERMCAP_mb=$(printf "\e[1;31m") \
-  LESS_TERMCAP_md=$(printf "\e[1;31m") \
-  LESS_TERMCAP_me=$(printf "\e[0m") \
-  LESS_TERMCAP_se=$(printf "\e[0m") \
-  LESS_TERMCAP_so=$(printf "\e[1;44;33m") \
-  LESS_TERMCAP_ue=$(printf "\e[0m") \
-  LESS_TERMCAP_us=$(printf "\e[1;32m") \
-   man "$@"
-}
+if [ "x${MANPAGER}" = "x" ]
+then
+  export GROFF_NO_SGR=1
+  man() {
+    env \
+      LESS_TERMCAP_mb=$(printf "\e[1;31m") \
+      LESS_TERMCAP_md=$(printf "\e[1;31m") \
+      LESS_TERMCAP_me=$(printf "\e[0m") \
+      LESS_TERMCAP_se=$(printf "\e[0m") \
+      LESS_TERMCAP_so=$(printf "\e[1;44;33m") \
+      LESS_TERMCAP_ue=$(printf "\e[0m") \
+      LESS_TERMCAP_us=$(printf "\e[1;32m") \
+      man "$@"
+  }
+fi
 
 # gpg-agent
 if pgrep -x gpg-agent > /dev/null; then
