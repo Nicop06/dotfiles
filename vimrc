@@ -15,7 +15,7 @@ Plugin 'scrooloose/nerdcommenter'
 Plugin 'scrooloose/nerdtree'
 Plugin 'kien/ctrlp.vim'
 Plugin 'rking/ag.vim'
-Plugin 'godlygeek/tabular'
+"Plugin 'godlygeek/tabular'
 
 " Version control software
 Plugin 'airblade/vim-gitgutter'
@@ -94,11 +94,18 @@ set pastetoggle=<F10>
 " Colorscheme
 let g:solarized_termcolors=256
 let g:solarized_termtrans=1
-colorscheme solarized
+try
+  colorscheme solarized
+catch /^Vim\%((\a\+)\)\=:E185/
+  colorscheme darkblue
+endtry
 
 " Move on the displayed lines, not real lines
 noremap <silent> k gk
 noremap <silent> j gj
+
+" CtrlP preferences
+let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
 
 " Customize Emmet keymappings
 "let g:user_emmet_expandabbr_key = '<c-e>'
