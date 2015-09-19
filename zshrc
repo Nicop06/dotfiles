@@ -3,7 +3,7 @@ autoload -U compinit promptinit
 compinit
 promptinit
 
-zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' menu select
+zstyle ':completion:*' menu select
 setopt autocd
 
 # Disable terminal stop
