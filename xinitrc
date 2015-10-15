@@ -25,6 +25,9 @@ pgrep -x urxvtd > /dev/null || urxvtd &
 pgrep -x lightsOn.sh > /dev/null || $HOME/bin/lightsOn.sh 120 &
 numlockx &
 
+# Launch disk automounting daemon
+udiskie &
+
 # Launch gpg daemon
 gpg-agent --daemon
 
