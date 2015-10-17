@@ -23,7 +23,7 @@ installvim: ; @which git > /dev/null
 	mkdir -p $(HOME)/.vim/Vundle.vim || true
 	git clone "https://github.com/gmarik/Vundle.vim" $(HOME)/.vim/bundle/Vundle.vim
 	vim +PluginInstall
-	$(HOME)/.vim/bundle/YouCompleteMe/install.sh --clang-completer --system-libclang
+	$(HOME)/.vim/bundle/YouCompleteMe/install.py --clang-completer --system-libclang
 
 clean:
 	rm $(HOME)/.vimrc || true
