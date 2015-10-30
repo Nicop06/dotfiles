@@ -252,6 +252,18 @@ window.init_funcs = {
             w.win.urgency_hint = false
         end)
     end,
+
+    hide_status_bar = function (w)
+        w.win:add_signal("property::fullscreen", function ()
+            if w.win.fullscreen then
+                w.sbar.ebox:hide()
+                w.tablist.widget:hide()
+            else
+                w.sbar.ebox:show()
+                w.tablist.widget:show()
+            end
+        end)
+    end,
 }
 
 -- Helper functions which operate on the window widgets or structure.
