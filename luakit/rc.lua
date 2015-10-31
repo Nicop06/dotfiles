@@ -110,8 +110,8 @@ require "downloads_chrome"
 require "follow"
 
 -- Use a custom charater set for hint labels
---local s = follow.label_styles
---follow.label_maker = s.sort(s.reverse(s.charset("asdfqwerzxcv")))
+local s = follow.label_styles
+follow.label_maker = s.sort(s.reverse(s.charset("qsdfghjklm")))
 
 -- Match only hint labels
 --follow.pattern_maker = follow.pattern_styles.match_label
