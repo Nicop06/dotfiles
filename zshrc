@@ -14,6 +14,7 @@ setopt HIST_IGNORE_DUPS
 setopt HIST_IGNORE_SPACE
 setopt INC_APPEND_HISTORY
 export HISTFILE=~/.zhistory
+export HISTSIZE=20000
 export SAVEHIST=20000
 
 # Help
