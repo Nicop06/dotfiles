@@ -12,7 +12,7 @@ stty -ixon
 # History
 setopt HIST_IGNORE_DUPS
 setopt HIST_IGNORE_SPACE
-setopt APPEND_HISTORY
+setopt INC_APPEND_HISTORY
 export HISTFILE=~/.zhistory
 export SAVEHIST=20000
 
