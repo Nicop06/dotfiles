@@ -14,10 +14,11 @@ install:
 	ln -s $(DOTFILES)/Xresources $(HOME)/.Xresources || true
 	ln -s $(DOTFILES)/xinitrc $(HOME)/.xinitrc || true
 	ln -s $(DOTFILES)/bashrc $(HOME)/.bashrc || true
+	ln -s $(DOTFILES)/weechat $(HOME)/.weechat || true
 	ln -s $(DOTFILES)/awesome $(CONFIG)/awesome || true
 	ln -s $(DOTFILES)/openbox $(CONFIG)/openbox || true
 	ln -s $(DOTFILES)/fbpanel $(CONFIG)/fbpanel || true
-	ln -s $(DOTFILES)/weechat $(HOME)/.weechat || true
+	ln -s $(DOTFILES)/luakit $(CONFIG)/luakit || true
 
 installvim: ; @which git > /dev/null
 	mkdir -p $(HOME)/.vim/Vundle.vim || true
@@ -32,5 +33,8 @@ clean:
 	rm $(HOME)/.Xresources || true
 	rm $(HOME)/.xinitrc || true
 	rm $(HOME)/.bashrc || true
+	rm $(HOME)/.weechat || true
 	rm $(CONFIG)/awesome || true
 	rm $(CONFIG)/openbox || true
+	rm $(CONFIG)/fbpanel || true
+	rm $(CONFIG)/luakit || true
