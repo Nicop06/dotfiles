@@ -114,7 +114,7 @@ local s = follow.label_styles
 follow.label_maker = s.sort(s.reverse(s.charset("qsdfghjklm")))
 
 -- Match only hint labels
---follow.pattern_maker = follow.pattern_styles.match_label
+follow.pattern_maker = follow.pattern_styles.match_label
 
 -- Add command history
 require "cmdhist"
