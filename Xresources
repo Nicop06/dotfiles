@@ -93,7 +93,7 @@ xterm*color15 : #EEEEEC
 
 !xterm fonts:
 
-xterm*faceName: Monospace:size=10:antialias=true
+xterm*faceName: Monospace:size=14:antialias=true
 xterm*font: 8x13
 
 !xterm name
