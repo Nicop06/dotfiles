@@ -21,7 +21,6 @@ Plugin 'rking/ag.vim'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'tpope/vim-fugitive'
 Plugin 'vim-scripts/vcscommand.vim'
-Plugin 'mhinz/vim-signify'
 
 " Hints
 Plugin 'scrooloose/syntastic'
@@ -138,7 +137,7 @@ nnoremap <C-k>      :execute 'silent! tabmove ' . tabpagenr()<CR>
 nnoremap <C-j>      :execute 'silent! tabmove ' . (tabpagenr()-2)<CR>
 
 " GNU Global
-if filereadable("GTAGS")
-  set csprg=gtags-cscope
-  cs add GTAGS
-endif
+set csprg=gtags-cscope
+let g:GtagsCscope_Auto_Load = 1
+let g:GtagsCscope_Auto_Map = 1
+let g:GtagsCscope_Quiet = 1
