@@ -4,5 +4,5 @@
 # to run user-specific things.
 #
 
-/home/nicolas/.fehbg &
+~/.fehbg &
 fbpanel &
