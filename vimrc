@@ -76,6 +76,9 @@ set formatoptions=c,q,r,t
 " Status line
 set laststatus=2
 
+" Enable folding
+set foldmethod=marker
+
 " Enable syntax and set background
 set background=dark
 syntax on
