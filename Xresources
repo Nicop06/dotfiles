@@ -4,7 +4,7 @@ Xcursor.theme:    Vanilla-DMZ-AA
 
 URxvt*depth:      32
 URxvt*background: [90]#1C1C1C
-URxvt*foreground: #DEDEDE
+URxvt*foreground: #D3D7CF
 
 URxvt*colorUL: #86a2b0
 
