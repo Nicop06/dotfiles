@@ -310,7 +310,7 @@
   </keybind>
   <keybind key="A-F1">
     <action name="Execute">
-      <command>urxvtc</command>
+      <command>urxvt</command>
     </action>
   </keybind>
   <keybind key="A-F2">
