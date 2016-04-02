@@ -114,7 +114,7 @@ menubar.utils.terminal = terminal -- Set the terminal for applications that requ
 
 -- {{{ Wibox
 -- Create a textclock widget
-mytextclock = awful.widget.textclock(" %a %b %d, %H:%M ", 1)
+mytextclock = awful.widget.textclock()
 
 -- Create a wibox for each screen and add it
 mywibox = {}
@@ -280,6 +280,8 @@ globalkeys = awful.util.table.join(
 
     -- XScreenSaver
     awful.key({ modkey, "Mod1" }, "l", function () awful.util.spawn("xscreensaver-command -lock") end),
+
+    -- Special keys
     awful.key({ }, "XF86AudioRaiseVolume",
         function ()
           awful.util.spawn("amixer set Master 9%+")
@@ -394,6 +396,8 @@ awful.rules.rules = {
     { rule = { class = "pinentry" },
       properties = { floating = true } },
     { rule = { class = "gimp" },
+      properties = { floating = true } },
+    { rule = { class = "Xmessage" },
       properties = { floating = true } },
     -- Set Firefox to always map on tags number 2 of screen 1.
     -- { rule = { class = "Firefox" },
