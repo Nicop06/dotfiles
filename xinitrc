@@ -30,6 +30,10 @@ udiskie &
 # Launch gpg daemon
 gpg-agent --daemon
 
+# Autocutsel (synchronize clipboards)
+autocutsel -fork &
+autocutsel -selection PRIMARY -fork &
+
 session=${1:-awesome}
 
 case $session in
