@@ -110,8 +110,6 @@ noremap <silent> j gj
 let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
 
 " Customize Emmet keymappings
-let g:user_emmet_install_global = 0
-autocmd FileType html,css EmmetInstall
 let g:user_emmet_leader_key='<C-S>'
 
 " UltiSnips config
@@ -122,6 +120,7 @@ let g:UltiSnipsJumpBackwardTrigger="<c-v>"
 " YouCompleteMe
 let g:ycm_global_ycm_extra_conf = '~/.vim/.ycm_extra_conf.py'
 let g:ycm_confirm_extra_conf = 0
+let g:ycm_server_python_interpreter = '/usr/bin/python2.7'
 nnoremap <leader>jd :YcmCompleter GoTo<CR>
 
 " LatexBox
