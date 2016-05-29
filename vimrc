@@ -43,6 +43,7 @@ Plugin 'honza/vim-snippets'
 " Vim Note
 Plugin 'xolox/vim-misc'
 Plugin 'xolox/vim-notes'
+Plugin 'vimoutliner/vimoutliner'
 
 " Latex
 Plugin 'LaTeX-Box-Team/LaTeX-Box'
