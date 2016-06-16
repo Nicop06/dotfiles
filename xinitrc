@@ -16,7 +16,7 @@ xrdb .Xresources
 xset r rate 200 40
 
 # Launch X applications
-compton -bcCG -e 0.8 --backend glx --vsync opengl-swc
+compton -b &
 xscreensaver -nosplash &
 
 # Launch desktop daemons
