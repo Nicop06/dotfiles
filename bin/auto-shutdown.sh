@@ -1,39 +1,96 @@
 #!/bin/sh
 
-shutdowntime=600
+# 0 = EXIT_SUCCESS
+# 1 = EXIT_FAILURE
+TRUE=0
+FALSE=1
 
-tmp=/tmp/auto-shutdown.lock
-nbusers=$(who | tail -n -2 | wc -l)
-nbconnections=$(netstat | grep ESTABLISHED | grep -v localhost | wc -l)
-time=$(date +%s)
+# Default values for global variables
+SHUTDOWNTIME=600
+BTRFS_VOLUMES=
+SAMBANETWORK=
+STATUS_FILE=/var/run/auto-shutdown
+DISABLE_FILE=/var/run/auto-shutdown.disable
+CONF_FILE=/etc/auto-shutdown.conf
 
-update () {
-	echo $time > $tmp
-	exit 0
+
+checkScrub()
+{
+  local volume
+  for volume in $BTRFS_VOLUMES ; do
+    if (btrfs scrub status $volume | grep running > /dev/null 2>&1) ; then
+      return $TRUE
+    fi
+  done
+  return $FALSE
 }
 
-# Update time
-if [ $nbusers -gt 0 -o $nbconnections -gt 0 -o ! -f $tmp ] ; then
-	update
-fi
 
-for pool in $(zpool list -H -o name) ; do
-	status="$(zpool status ${pool} | grep scrub)"
-	case "${status}" in
-		*"scrub in progress"*)
-			update
-			;;
-	esac
-done
+isBusy()
+{
+  # Disable auto-shutdown if this file is present
+  if [ -f "$DISABLE_FILE" ] ; then
+    return $TRUE
+  fi
 
-oldtime=$(cat $tmp)
-if [ "${oldtime:-x}" = "x" ] ; then 
-	oldtime=$time
-fi
+  # Check active connections
+  if [ $(ss -tu -o state established | wc -l) -gt 0 ] ; then
+    return $TRUE
+  fi
 
-if [ $(($time - $oldtime)) -ge $shutdowntime ] ; then
-	rm $tmp
-	poweroff
-fi
+  # Check connected users
+  if [ $(who | wc -l) -gt 0 ] ; then
+    return $TRUE
+  fi
 
-exit 0
+  # Check for btrfs scrub
+  if (checkScrub) ; then
+    return $TRUE
+  fi
+
+  # Check samba connections
+  if [ "$SAMBANETWORK" ] ; then
+    if (smbstatus | grep $SAMBANETWORK > /dev/null 2>&1) ; then
+      return $TRUE
+    fi
+  fi
+}
+
+
+checkTimeout()
+{
+  local oldtime, curtime
+  curtime=$1
+
+  if [ -f $STATUS_FILE ] ; then
+    oldtime=$(cat $STATUS_FILE)
+    if [ $(($curtime - $oldtime)) -ge $shutdowntime ] ; then
+      return $TRUE
+    fi
+  fi
+
+  return $FALSE
+}
+
+
+doAutoShutdown()
+{
+  local curtime
+  curtime=$(date +%s)
+
+  if (!isBusy) ; then
+    # The system is not busy
+    if (checkTimeout) ; then
+      # Timeout is reached, do the shutdown
+      [ -f $STATUS_FILE ] && rm $STATUS_FILE
+      shutdown -P now
+    fi
+  else
+    # The system is busy, record the current time
+    echo $curtime > $STATUS_FILE
+  fi
+}
+
+
+
+doAutoShutdown()
