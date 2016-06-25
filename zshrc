@@ -110,8 +110,8 @@ fi
 
 # gpg-agent
 if pgrep -x gpg-agent > /dev/null; then
-  export GPG_AGENT_INFO="$HOME/.gnupg/S.gpg-agent"
-  export SSH_AUTH_SOCK="$HOME/.gnupg/S.gpg-agent.ssh"
+  export GPG_AGENT_INFO="/run/user/$UID/gnupg/S.gpg-agent"
+  export SSH_AUTH_SOCK="/run/user/$UID/gnupg/S.gpg-agent.ssh"
 else
   eval $(gpg-agent --daemon)
 fi
