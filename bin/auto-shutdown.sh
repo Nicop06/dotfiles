@@ -7,11 +7,18 @@ FALSE=1
 
 # Default values for global variables
 SHUTDOWNTIME=600
+INTERVAL=60
 BTRFS_VOLUMES=
 SAMBANETWORK=
 STATUS_FILE=/var/run/auto-shutdown
 DISABLE_FILE=/var/run/auto-shutdown.disable
 CONF_FILE=/etc/auto-shutdown.conf
+CRON_MODE=false
+
+usage()
+{
+  echo "Usage: $(basename $0) [-f filename] [-i interval] [-c]"
+}
 
 
 checkScrub()
@@ -34,7 +41,7 @@ isBusy()
   fi
 
   # Check active connections
-  if [ $(ss -tu -o state established | wc -l) -gt 0 ] ; then
+  if [ $(ss -tu -o state established | wc -l) -gt 1 ] ; then
     return $TRUE
   fi
 
@@ -54,17 +61,24 @@ isBusy()
       return $TRUE
     fi
   fi
+
+  return $FALSE
 }
 
 
 checkTimeout()
 {
-  local oldtime, curtime
-  curtime=$1
+  local oldtime
+  local curtime
+  curtime=$(date +%s)
 
   if [ -f $STATUS_FILE ] ; then
+    # Get the last activity timestamp
     oldtime=$(cat $STATUS_FILE)
-    if [ $(($curtime - $oldtime)) -ge $shutdowntime ] ; then
+
+    # Check if the difference between last activity timestamp
+    # and current timestamp is greater than the timeout
+    if [ $(($curtime - $oldtime)) -ge $SHUTDOWNTIME ] ; then
       return $TRUE
     fi
   fi
@@ -75,22 +89,41 @@ checkTimeout()
 
 doAutoShutdown()
 {
-  local curtime
-  curtime=$(date +%s)
-
-  if (!isBusy) ; then
+  if (! isBusy) ; then
     # The system is not busy
     if (checkTimeout) ; then
       # Timeout is reached, do the shutdown
-      [ -f $STATUS_FILE ] && rm $STATUS_FILE
+      [ -f $STATUS_FILE ] && rm $STATUS_FILE
       shutdown -P now
     fi
   else
     # The system is busy, record the current time
-    echo $curtime > $STATUS_FILE
+    date +%s > $STATUS_FILE
   fi
 }
 
+while getopts ":f:i:c" opt; do
+  case $opt in
+    f) CONF_FILE=$OPTARG ;;
+    i) INTERVAL=$OPTARG ;;
+    c) CRON_MODE=true ;;
+    *) usage; exit 1 ;;
+  esac
+done
 
+# Source conf file if exists
+[ -f $CONF_FILE ] && source $CONF_FILE
 
-doAutoShutdown()
+if $CRON_MODE ; then
+  # Cron mode: check idle status and exit
+  doAutoShutdown
+else
+  # Regular mode: check idle status forever and every INTERVAL seconds
+  while true
+  do
+    doAutoShutdown
+    sleep $INTERVAL
+  done
+fi
+
+exit 0
