@@ -139,7 +139,7 @@ else
   # Regular mode: check idle status forever and every INTERVAL seconds
   while true
   do
-    doAutoShutdown $last_activity_time
+    doAutoShutdown
     sleep $INTERVAL
   done
 fi
