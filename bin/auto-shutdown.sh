@@ -12,7 +12,7 @@ INTERVAL=60
 BTRFS_VOLUMES=
 SAMBANETWORK=
 STATUS_FILE=/var/run/auto-shutdown
-DISABLE_FILE=/var/run/auto-shutdown.disable
+DISABLE_SHUTDOWN_FILES=/var/run/auto-shutdown.disable
 CONF_FILE=/etc/auto-shutdown.conf
 CRON_MODE=false
 
@@ -34,10 +34,23 @@ checkScrub()
 }
 
 
+checkDisableFiles()
+{
+  local file
+  for file in $DISABLE_SHUTDOWN_FILES ; do
+    if [ -f $file ] ; then
+      return $TRUE
+    fi
+  done
+
+  return $FALSE
+}
+
+
 isBusy()
 {
   # Disable auto-shutdown if this file is present
-  if [ -f "$DISABLE_FILE" ] ; then
+  if (checkDisableFiles) ; then
     return $TRUE
   fi
 
@@ -70,34 +83,37 @@ isBusy()
 checkTimeout()
 {
   local last_activity_time
+  local inactivity_duration
   local curtime
   local uptime
   local timeout
 
-  uptime=$(cat /proc/uptime | cut -d1 -f' ')
+  uptime=$(cat /proc/uptime | cut -f1 -d' ' | cut -f1 -d'.')
   curtime=$(date +%s)
 
   if [ -f $STATUS_FILE ] ; then
     # Get the last activity time stamp
     last_activity_time=$(cat $STATUS_FILE)
 
-    # Sanity check in case the time in the status file is invalid
-    if [ $(($curtime - $last_activity_time)) -lt $uptime ] ; then
+    # Sanity check in case the time in the status file is invalid,
+    # use uptime
+    if [ $(($curtime - $last_activity_time)) -lt $uptime ] ; then
+      inactivity_duration=$(($curtime - $last_activity_time))
       timeout=$INACTIVITY_TIMEOUT
     else
-      last_activity_time=$uptime
+      inactivity_duration=$uptime
       timeout=$INITIAL_TIMEOUT
     fi
   else
     # In case the status file is not set (no activity since system boot),
     # use the uptime as an activity time stamp
-    last_activity_time=$uptime
+    inactivity_duration=$uptime
     timeout=$INITIAL_TIMEOUT
   fi
 
   # Check if the difference between last activity time stamp
   # and current time stamp is greater than the timeout
-  if [ $(($curtime - $last_activity_time)) -ge $timeout ] ; then
+  if [ $inactivity_duration -ge $timeout ] ; then
     return $TRUE
   fi
 
