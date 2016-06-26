@@ -6,7 +6,8 @@ TRUE=0
 FALSE=1
 
 # Default values for global variables
-SHUTDOWNTIME=600
+INACTIVITY_TIMEOUT=3600
+INITIAL_TIMEOUT=3600
 INTERVAL=60
 BTRFS_VOLUMES=
 SAMBANETWORK=
@@ -68,19 +69,36 @@ isBusy()
 
 checkTimeout()
 {
-  local oldtime
+  local last_activity_time
   local curtime
+  local uptime
+  local timeout
+
+  uptime=$(cat /proc/uptime | cut -d1 -f' ')
   curtime=$(date +%s)
 
   if [ -f $STATUS_FILE ] ; then
-    # Get the last activity timestamp
-    oldtime=$(cat $STATUS_FILE)
+    # Get the last activity time stamp
+    last_activity_time=$(cat $STATUS_FILE)
 
-    # Check if the difference between last activity timestamp
-    # and current timestamp is greater than the timeout
-    if [ $(($curtime - $oldtime)) -ge $SHUTDOWNTIME ] ; then
-      return $TRUE
+    # Sanity check in case the time in the status file is invalid
+    if [ $(($curtime - $last_activity_time)) -lt $uptime ] ; then
+      timeout=$INACTIVITY_TIMEOUT
+    else
+      last_activity_time=$uptime
+      timeout=$INITIAL_TIMEOUT
     fi
+  else
+    # In case the status file is not set (no activity since system boot),
+    # use the uptime as an activity time stamp
+    last_activity_time=$uptime
+    timeout=$INITIAL_TIMEOUT
+  fi
+
+  # Check if the difference between last activity time stamp
+  # and current time stamp is greater than the timeout
+  if [ $(($curtime - $last_activity_time)) -ge $timeout ] ; then
+    return $TRUE
   fi
 
   return $FALSE
@@ -89,16 +107,16 @@ checkTimeout()
 
 doAutoShutdown()
 {
-  if (! isBusy) ; then
+  if (isBusy) ; then
+    # The system is busy, record the current time
+    date +%s > $STATUS_FILE
+  else
     # The system is not busy
     if (checkTimeout) ; then
       # Timeout is reached, do the shutdown
       [ -f $STATUS_FILE ] && rm $STATUS_FILE
       shutdown -P now
     fi
-  else
-    # The system is busy, record the current time
-    date +%s > $STATUS_FILE
   fi
 }
 
@@ -121,7 +139,7 @@ else
   # Regular mode: check idle status forever and every INTERVAL seconds
   while true
   do
-    doAutoShutdown
+    doAutoShutdown $last_activity_time
     sleep $INTERVAL
   done
 fi
