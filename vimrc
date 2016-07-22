@@ -48,6 +48,9 @@ Plugin 'vimoutliner/vimoutliner'
 " Latex
 Plugin 'LaTeX-Box-Team/LaTeX-Box'
 
+" R
+Plugin 'jalvesaq/Nvim-R'
+
 call vundle#end()
 
 
@@ -117,6 +120,9 @@ let g:user_emmet_leader_key='<C-S>'
 let g:UltiSnipsExpandTrigger="<c-c>"
 let g:UltiSnipsJumpForwardTrigger="<c-c>"
 let g:UltiSnipsJumpBackwardTrigger="<c-v>"
+
+" Vim-airline
+let g:airline_powerline_fonts = 1
 
 " YouCompleteMe
 let g:ycm_global_ycm_extra_conf = '~/.vim/.ycm_extra_conf.py'

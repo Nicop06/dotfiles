@@ -35,8 +35,8 @@ URxvt*color15 : #EEEEEC
 
 !urxvt fonts:
 
-URxvt*font: xft:Monospace:size=14
-URxvt*boldFont: xft:Monospace:bold:size=14
+URxvt*font: xft:DejaVu Sans Mono for Powerline:size=14
+URxvt*boldFont: xft:DejaVu Sans Mono for Powerline:bold:size=14
 
 !enabling clickable links:
 
@@ -93,7 +93,7 @@ xterm*color15 : #EEEEEC
 
 !xterm fonts:
 
-xterm*faceName: Monospace:size=14:antialias=true
+xterm*faceName: DejaVu Sans Mono for Powerline:size=14:antialias=true
 xterm*font: 8x13
 
 !xterm name
