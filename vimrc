@@ -83,6 +83,9 @@ set laststatus=2
 " Enable folding
 set foldmethod=marker
 
+" Force vertical split
+set diffopt+=vertical
+
 " Enable syntax and set background
 set background=dark
 syntax on
