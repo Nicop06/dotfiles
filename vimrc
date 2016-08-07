@@ -145,7 +145,7 @@ nnoremap <leader>tc :tabclose<CR>
 nnoremap <leader>to :tabonly<CR>
 nnoremap <C-n>      :tabnext<CR>
 nnoremap <C-h>      :tabprevious<CR>
-nnoremap <C-k>      :execute 'silent! tabmove ' . tabpagenr()<CR>
+nnoremap <C-k>      :execute 'silent! tabmove ' . (tabpagenr()+1)<CR>
 nnoremap <C-j>      :execute 'silent! tabmove ' . (tabpagenr()-2)<CR>
 
 " GNU Global
