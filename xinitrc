@@ -31,7 +31,7 @@ udiskie &
 gpg-agent --daemon
 
 # Offlineimap
-pgrep -x offlineimap > /dev/null || offlineimap -l ~/.offlineimap/offlineimap.log &
+pgrep -x offlineimap > /dev/null || offlineimap -l ~/.offlineimap/logs/offlineimap.log &
 
 # Autocutsel (synchronize clipboards)
 autocutsel -fork &
