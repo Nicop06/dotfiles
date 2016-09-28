@@ -9,7 +9,7 @@ URxvt*foreground: #D3D7CF
 URxvt*colorUL: #86a2b0
 
 ! black
-URxvt*color0  : #2E3436
+URxvt*color0  : [90]#1C1C1C
 URxvt*color8  : #555753
 ! red
 URxvt*color1  : #CC0000
@@ -67,7 +67,7 @@ xterm*foreground: #DEDEDE
 xterm*colorUL: #86a2b0
 
 ! black
-xterm*color0  : #2E3436
+xterm*color0  : [90]#2E3436
 xterm*color8  : #555753
 ! red
 xterm*color1  : #CC0000
