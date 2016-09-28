@@ -28,6 +28,7 @@ Plugin 'bling/vim-airline'
 
 " Colorscheme
 Plugin 'altercation/vim-colors-solarized.git'
+Plugin 'tomasr/molokai'
 
 " EditorConfig
 "Plugin 'editorconfig/editorconfig-vim'
@@ -65,10 +66,13 @@ set smarttab
 " Line numbers, search and command options
 set showcmd
 set number
+set relativenumber
+set cursorline
 set showmatch
 set hlsearch
 set incsearch
 set ignorecase
+set smartcase
 set smarttab
 set ruler
 
@@ -93,6 +97,9 @@ syntax on
 " Change leader to comma
 let mapleader = ","
 let maplocalleader = ","
+
+" Clear search register
+nnoremap <leader>/ :let @/=""<CR>
 
 " Set shortcuts
 map <F5> :setlocal spell! spelllang=en_us<CR>:syntax spell toplevel<CR>
