@@ -12,6 +12,8 @@ local naughty = require("naughty")
 local menubar = require("menubar")
 -- Volume widget
 require("volume")
+-- Touchpad function
+require("touchpad")
 
 -- {{{ Error handling
 -- Check if awesome encountered an error during startup and fell back to
@@ -285,17 +287,17 @@ globalkeys = awful.util.table.join(
     awful.key({ }, "XF86AudioRaiseVolume",
         function ()
           awful.util.spawn("amixer set Master 9%+")
-          update_volume(volume_widget)
+          update_volume(volume_widget, true)
         end),
     awful.key({ }, "XF86AudioLowerVolume",
         function ()
           awful.util.spawn("amixer set Master 9%-")
-          update_volume(volume_widget)
+          update_volume(volume_widget, true)
         end),
     awful.key({ }, "XF86AudioMute",
         function ()
           awful.util.spawn("amixer sset Master toggle")
-          update_volume(volume_widget)
+          update_volume(volume_widget, true)
         end),
     awful.key({ }, "XF86AudioNext", function ()
          awful.util.spawn("mpc next") end),
@@ -303,8 +305,8 @@ globalkeys = awful.util.table.join(
          awful.util.spawn("mpc prev") end),
     awful.key({ }, "XF86AudioPlay", function ()
          awful.util.spawn("mpc toggle") end),
-    awful.key({ }, "XF86TouchpadToggle", function ()
-         awful.util.spawn("touchpadToggle.sh -n") end)
+
+    awful.key({ }, "XF86TouchpadToggle", toggle_touchpad)
 )
 
 clientkeys = awful.util.table.join(
