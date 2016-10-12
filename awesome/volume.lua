@@ -35,6 +35,7 @@ function update_volume(widget, notify)
       title = "Volume",
       text = status,
       font = "Monospace 11",
+      timeout = 1,
       icon = "/usr/share/icons/Adwaita/48x48/apps/multimedia-volume-control.png"
     }
     if prev_id ~= 0 then

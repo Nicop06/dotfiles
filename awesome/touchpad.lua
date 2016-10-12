@@ -22,6 +22,7 @@ function toggle_touchpad()
   local options = {
     title = "Touchpad",
     text = status,
+    timeout = 1,
     icon = "/usr/share/icons/Adwaita/48x48/devices/" .. icon
   }
   if prev_id ~= 0 then
