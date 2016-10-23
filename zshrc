@@ -47,12 +47,12 @@ PROMPT="%{$fg_bold[red]%}%n%{$fg_bold[cyan]%}@%{$fg_bold[blue]%}%m %{$fg_bold[ye
 RPROMPT="[%{$fg_no_bold[yellow]%}%?%{$reset_color%}]"
 
 # Aliases
-alias ls='ls --color=always'
-alias dir='dir --color=always'
-alias vdir='vdir --color=always'
+alias ls='ls --color=auto'
+alias dir='dir --color=auto'
+alias vdir='vdir --color=auto'
 
-alias grep='grep --color=always'
-alias fgrep='fgrep --color=always'
+alias grep='grep --color=auto'
+alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
 
 alias ll='ls -alF'
