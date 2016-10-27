@@ -157,6 +157,7 @@ nnoremap <C-j>      :execute 'silent! tabmove ' . (tabpagenr()-2)<CR>
 
 " GNU Global
 set csprg=gtags-cscope
+set cscopequickfix=s-,c-,d-,i-,t-,e-
 let g:GtagsCscope_Auto_Load = 1
 let g:GtagsCscope_Auto_Map = 1
 let g:GtagsCscope_Quiet = 1
