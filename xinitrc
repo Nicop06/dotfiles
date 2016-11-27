@@ -33,34 +33,30 @@ gpg-agent --daemon
 # Offlineimap
 pgrep -x offlineimap > /dev/null || offlineimap -l ~/.offlineimap/logs/offlineimap.log &
 
-# Autocutsel (synchronize clipboards)
-autocutsel -fork &
-autocutsel -selection PRIMARY -fork &
-
 session=${1:-awesome}
 
 case $session in
-    awesome           ) exec awesome;;
-    bspwm             ) exec bspwm;;
-    catwm             ) exec catwm;;
-    cinnamon          ) exec cinnamon-session;;
-    dwm               ) exec dwm;;
-    enlightenment     ) exec enlightenment_start;;
-    ede               ) exec startede;;
-    fluxbox           ) exec startfluxbox;;
-    gnome             ) exec gnome-session;;
-    gnome-classic     ) exec gnome-session --session=gnome-classic;;
-    i3|i3wm           ) exec i3;;
-    icewm             ) exec icewm-session;;
-    jwm               ) exec jwm;;
-    kde               ) exec startkde;;
-    mate              ) exec mate-session;;
-    monster|monsterwm ) exec monsterwm;;
-    notion            ) exec notion;;
-    openbox           ) exec openbox-session;;
-    unity             ) exec unity;;
-    xfce|xfce4        ) exec startxfce4;;
-    xmonad            ) exec xmonad;;
-    # No known session, try to run it as command
-    *) exec $1;;
+    awesome           ) session=awesome;;
+    bspwm             ) session=bspwm;;
+    catwm             ) session=catwm;;
+    cinnamon          ) session=cinnamon-session;;
+    dwm               ) session=dwm;;
+    enlightenment     ) session=enlightenment_start;;
+    ede               ) session=startede;;
+    fluxbox           ) session=startfluxbox;;
+    gnome             ) session=gnome-session;;
+    gnome-classic     ) session="gnome-session --session=gnome-classic";;
+    i3|i3wm           ) session=i3;;
+    icewm             ) session=icewm-session;;
+    jwm               ) session=jwm;;
+    kde               ) session=startkde;;
+    mate              ) session=mate-session;;
+    monster|monsterwm ) session=monsterwm;;
+    notion            ) session=notion;;
+    openbox           ) session=openbox-session;;
+    unity             ) session=unity;;
+    xfce|xfce4        ) session=startxfce4;;
+    xmonad            ) session=xmonad;;
 esac
+
+exec ck-launch-session dbus-launch --sh-syntax --exit-with-session ${session}
