@@ -33,6 +33,9 @@ gpg-agent --daemon
 # Offlineimap
 pgrep -x offlineimap > /dev/null || offlineimap -l ~/.offlineimap/logs/offlineimap.log &
 
+# Background
+./.fehbg
+
 session=${1:-awesome}
 
 case $session in
