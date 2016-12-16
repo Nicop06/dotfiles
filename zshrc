@@ -122,6 +122,4 @@ fi
 
 # Virtualenvwrapper
 export WORKON_HOME=~/.virtualenvs
-virtualenvwrapper() {
-  source /usr/bin/virtualenvwrapper.sh
-}
+[ -f /usr/bin/virtualenvwrapper_lazy.sh ] && . /usr/bin/virtualenvwrapper_lazy.sh
