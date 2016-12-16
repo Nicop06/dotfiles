@@ -35,7 +35,7 @@ Plugin 'tomasr/molokai'
 
 " Autocomplete
 Plugin 'mattn/emmet-vim'
-Plugin 'Valloric/YouCompleteMe'
+"Plugin 'Valloric/YouCompleteMe'
 
 " Snippets
 Plugin 'SirVer/ultisnips'
@@ -45,6 +45,7 @@ Plugin 'honza/vim-snippets'
 Plugin 'xolox/vim-misc'
 Plugin 'xolox/vim-notes'
 Plugin 'vimoutliner/vimoutliner'
+Plugin 'reedes/vim-pencil'
 
 " Latex
 Plugin 'LaTeX-Box-Team/LaTeX-Box'
