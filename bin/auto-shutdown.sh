@@ -1,9 +1,13 @@
 #!/bin/sh
 
+# Name: auto-shutdown.sh
+# Brief: Shutdown a server when it is not in used
+# Author: Nicolas Porcel
+
 # 0 = EXIT_SUCCESS
 # 1 = EXIT_FAILURE
-TRUE=0
-FALSE=1
+readonly TRUE=0
+readonly FALSE=1
 
 # Default values for global variables
 INACTIVITY_TIMEOUT=3600
@@ -146,7 +150,7 @@ while getopts ":f:i:c" opt; do
 done
 
 # Source conf file if exists
-[ -f $CONF_FILE ] && source $CONF_FILE
+[ -f $CONF_FILE ] && . $CONF_FILE
 
 if $CRON_MODE ; then
   # Cron mode: check idle status and exit
