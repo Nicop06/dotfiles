@@ -306,7 +306,11 @@ globalkeys = awful.util.table.join(
     awful.key({ }, "XF86AudioPlay", function ()
          awful.util.spawn("mpc toggle") end),
 
-    awful.key({ }, "XF86TouchpadToggle", toggle_touchpad)
+    awful.key({ }, "XF86TouchpadToggle", toggle_touchpad),
+    awful.key({ }, "XF86MonBrightnessDown", function ()
+         awful.util.spawn("xbacklight -dec 10") end),
+    awful.key({ }, "XF86MonBrightnessUp", function ()
+         awful.util.spawn("xbacklight -inc 10") end)
 )
 
 clientkeys = awful.util.table.join(
