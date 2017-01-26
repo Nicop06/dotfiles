@@ -46,6 +46,8 @@ Plugin 'xolox/vim-misc'
 Plugin 'xolox/vim-notes'
 Plugin 'vimoutliner/vimoutliner'
 Plugin 'reedes/vim-pencil'
+Plugin 'vim-pandoc/vim-pandoc'
+Plugin 'vim-pandoc/vim-pandoc-syntax'
 
 " Latex
 Plugin 'LaTeX-Box-Team/LaTeX-Box'
