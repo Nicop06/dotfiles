@@ -339,9 +339,8 @@ globalkeys = gears.table.join(
     awful.key({ modkey }, "p", function() menubar.show() end,
               {description = "show the menubar", group = "launcher"}),
 
-    -- XScreenSaver
-    -- awful.key({ modkey, "Mod1" }, "l", function () awful.util.spawn("xscreensaver-command -lock") end),
-    awful.key({ modkey, "Mod1" }, "l", function () awful.util.spawn("slock") end),
+    -- i3lock
+    awful.key({ modkey, "Mod1" }, "l", function () awful.util.spawn("i3lock") end),
 
     -- Special keys
     awful.key({ }, "XF86AudioRaiseVolume",

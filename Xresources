@@ -35,7 +35,7 @@ URxvt*color15 : #EEEEEC
 
 !urxvt fonts:
 
-URxvt*font: xft:DejaVu Sans Mono for Powerline:antialias=true:size=16
+URxvt*font: xft:Monospace:size=16
 URxvt.letterSpace: -1
 
 !enabling clickable links:
