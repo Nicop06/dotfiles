@@ -340,7 +340,10 @@ globalkeys = gears.table.join(
               {description = "show the menubar", group = "launcher"}),
 
     -- i3lock
-    awful.key({ modkey, "Mod1" }, "l", function () awful.util.spawn("i3lock") end),
+    awful.key({ modkey, "Mod1" }, "l",
+        function ()
+          awful.util.spawn("i3lock -n -i /home/nicolas/Pictures/lock.png")
+        end),
 
     -- Special keys
     awful.key({ }, "XF86AudioRaiseVolume",
