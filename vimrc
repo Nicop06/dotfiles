@@ -15,6 +15,8 @@ Plugin 'scrooloose/nerdcommenter'
 Plugin 'scrooloose/nerdtree'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'rking/ag.vim'
+Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-unimpaired'
 "Plugin 'godlygeek/tabular'
 
 " Version control software
@@ -23,37 +25,37 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'vim-scripts/vcscommand.vim'
 
 " Hints
-Plugin 'scrooloose/syntastic'
-Plugin 'bling/vim-airline'
+"Plugin 'scrooloose/syntastic'
+"Plugin 'bling/vim-airline'
 
 " Colorscheme
-Plugin 'altercation/vim-colors-solarized.git'
-Plugin 'tomasr/molokai'
+"Plugin 'altercation/vim-colors-solarized.git'
+"Plugin 'tomasr/molokai'
 
 " EditorConfig
 "Plugin 'editorconfig/editorconfig-vim'
 
 " Autocomplete
-Plugin 'mattn/emmet-vim'
+"Plugin 'mattn/emmet-vim'
 "Plugin 'Valloric/YouCompleteMe'
 
 " Snippets
-Plugin 'SirVer/ultisnips'
-Plugin 'honza/vim-snippets'
+"Plugin 'SirVer/ultisnips'
+"Plugin 'honza/vim-snippets'
 
 " Vim Note
-Plugin 'xolox/vim-misc'
-Plugin 'xolox/vim-notes'
-Plugin 'vimoutliner/vimoutliner'
-Plugin 'reedes/vim-pencil'
-Plugin 'vim-pandoc/vim-pandoc'
-Plugin 'vim-pandoc/vim-pandoc-syntax'
+"Plugin 'xolox/vim-misc'
+"Plugin 'xolox/vim-notes'
+"Plugin 'vimoutliner/vimoutliner'
+"Plugin 'reedes/vim-pencil'
+"Plugin 'vim-pandoc/vim-pandoc'
+"Plugin 'vim-pandoc/vim-pandoc-syntax'
 
 " Latex
-Plugin 'LaTeX-Box-Team/LaTeX-Box'
+"Plugin 'LaTeX-Box-Team/LaTeX-Box'
 
 " R
-Plugin 'jalvesaq/Nvim-R'
+"Plugin 'jalvesaq/Nvim-R'
 
 call vundle#end()
 
@@ -70,7 +72,6 @@ set smarttab
 set showcmd
 set number
 set relativenumber
-set cursorline
 set showmatch
 set hlsearch
 set incsearch
@@ -116,7 +117,7 @@ let g:solarized_termtrans=1
 try
   colorscheme solarized
 catch /^Vim\%((\a\+)\)\=:E185/
-  colorscheme darkblue
+  colorscheme slate
 endtry
 
 " Move on the displayed lines, not real lines
