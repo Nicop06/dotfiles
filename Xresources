@@ -50,8 +50,8 @@ URxvt.matcher.button:   1
 URxvt*saveLines: 12000
 URxvt*scrollstyle:plain
 URxvt*scrollBar: false
-URxvt*cursorBlink: true
-URxvt*cursorUnderline: true
+URxvt*cursorBlink: false
+URxvt*cursorUnderline: false
 
 !urxvt disable printing
 URxvt.print-pipe: "cat > /dev/null"
