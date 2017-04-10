@@ -1,6 +1,6 @@
 #
 # Automatically generated file; DO NOT EDIT.
-# Linux/x86 4.10.0-gentoo Kernel Configuration
+# Linux/x86 4.10.9-gentoo Kernel Configuration
 #
 
 #
@@ -3927,7 +3927,7 @@ CONFIG_CRYPTO_ECHAINIV=y
 CONFIG_CRYPTO_CBC=y
 CONFIG_CRYPTO_CTR=y
 # CONFIG_CRYPTO_CTS is not set
-# CONFIG_CRYPTO_ECB is not set
+CONFIG_CRYPTO_ECB=y
 CONFIG_CRYPTO_LRW=y
 # CONFIG_CRYPTO_PCBC is not set
 CONFIG_CRYPTO_XTS=y
