@@ -30,7 +30,7 @@ Plugin 'vim-scripts/vcscommand.vim'
 "Plugin 'bling/vim-airline'
 
 " Colorscheme
-"Plugin 'altercation/vim-colors-solarized.git'
+Plugin 'altercation/vim-colors-solarized.git'
 "Plugin 'tomasr/molokai'
 
 " EditorConfig
@@ -48,9 +48,9 @@ Plugin 'vim-scripts/vcscommand.vim'
 "Plugin 'xolox/vim-misc'
 "Plugin 'xolox/vim-notes'
 "Plugin 'vimoutliner/vimoutliner'
-"Plugin 'reedes/vim-pencil'
-"Plugin 'vim-pandoc/vim-pandoc'
-"Plugin 'vim-pandoc/vim-pandoc-syntax'
+Plugin 'reedes/vim-pencil'
+Plugin 'vim-pandoc/vim-pandoc'
+Plugin 'vim-pandoc/vim-pandoc-syntax'
 
 " Latex
 "Plugin 'LaTeX-Box-Team/LaTeX-Box'
