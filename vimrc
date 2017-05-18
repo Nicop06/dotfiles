@@ -18,6 +18,7 @@ Plugin 'rking/ag.vim'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-unimpaired'
 Plugin 'tpope/vim-repeat'
+Plugin 'will133/vim-dirdiff'
 "Plugin 'godlygeek/tabular'
 
 " Version control software
