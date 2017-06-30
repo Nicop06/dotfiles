@@ -27,7 +27,7 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'vim-scripts/vcscommand.vim'
 
 " Hints
-"Plugin 'scrooloose/syntastic'
+Plugin 'scrooloose/syntastic'
 "Plugin 'bling/vim-airline'
 
 " Colorscheme
@@ -58,6 +58,11 @@ Plugin 'vim-pandoc/vim-pandoc-syntax'
 
 " R
 "Plugin 'jalvesaq/Nvim-R'
+
+" Haskell
+Plugin 'Shougo/vimproc'
+Plugin 'eagletmt/ghcmod-vim'
+Plugin 'eagletmt/neco-ghc'
 
 call vundle#end()
 
@@ -167,3 +172,6 @@ set cscopequickfix=s-,c-,d-,i-,t-,e-
 let g:GtagsCscope_Auto_Load = 1
 let g:GtagsCscope_Auto_Map = 1
 let g:GtagsCscope_Quiet = 1
+
+" Haskell
+let g:haddock_browser="/usr/bin/firefox"
