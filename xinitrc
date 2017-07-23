@@ -17,12 +17,6 @@ xset r rate 200 40
 
 # Launch X applications
 compton &
-#xscreensaver -nosplash &
-
-# Launch desktop daemons
-mpd
-pgrep -x lightsOn.sh > /dev/null || $HOME/bin/lightsOn.sh 120 &
-numlockx &
 
 # Offlineimap
 #pgrep -x offlineimap > /dev/null || offlineimap -l ~/.offlineimap/logs/offlineimap.log &
