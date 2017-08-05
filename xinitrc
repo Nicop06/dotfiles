@@ -24,9 +24,6 @@ mpd
 pgrep -x lightsOn.sh > /dev/null || $HOME/bin/lightsOn.sh 120 &
 numlockx &
 
-# Launch gpg daemon
-gpg-agent --daemon
-
 # Offlineimap
 pgrep -x offlineimap > /dev/null || offlineimap -l ~/.offlineimap/logs/offlineimap.log &
 

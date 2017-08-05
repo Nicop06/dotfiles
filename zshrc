@@ -108,14 +108,6 @@ then
   }
 fi
 
-# gpg-agent
-if pgrep -x gpg-agent > /dev/null; then
-  export GPG_AGENT_INFO="/run/user/$UID/gnupg/S.gpg-agent"
-  export SSH_AUTH_SOCK="/run/user/$UID/gnupg/S.gpg-agent.ssh"
-else
-  eval $(gpg-agent --daemon)
-fi
-
 # RVM
 #[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 #[[ -r /usr/local/rvm/scripts/completion ]] && . /usr/local/rvm/scripts/completion

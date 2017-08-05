@@ -52,13 +52,5 @@ man() {
    man "$@"
 }
 
-# gpg-agent
-if pgrep -x gpg-agent > /dev/null; then
-  export GPG_AGENT_INFO="$HOME/.gnupg/S.gpg-agent"
-  export SSH_AUTH_SOCK="$HOME/.gnupg/S.gpg-agent.ssh"
-else
-  eval $(gpg-agent --daemon)
-fi
-
 # Local bashrc not tracked in git
 [ -f ~/.bashrc_local ] && source ~/.bashrc_local
