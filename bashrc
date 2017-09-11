@@ -57,3 +57,8 @@ man() {
 
 # Local bashrc not tracked in git
 [ -f ~/.bashrc_local ] && . ~/.bashrc_local
+[ -f ~/.bashrc_local ] && source ~/.bashrc_local
+
+# Virtualenvwrapper
+export WORKON_HOME=~/.virtualenvs
+[ -f /usr/bin/virtualenvwrapper_lazy.sh ] && . /usr/bin/virtualenvwrapper_lazy.sh
