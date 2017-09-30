@@ -57,7 +57,7 @@ Plugin 'vim-pandoc/vim-pandoc-syntax'
 Plugin 'LaTeX-Box-Team/LaTeX-Box'
 
 " R
-"Plugin 'jalvesaq/Nvim-R'
+Plugin 'jalvesaq/Nvim-R'
 
 " Haskell
 Plugin 'Shougo/vimproc'
@@ -107,7 +107,7 @@ syntax on
 
 " Change leader to comma
 let mapleader = ","
-let maplocalleader = ","
+let maplocalleader = ";"
 
 " Clear search register
 nnoremap <leader>/ :let @/=""<CR>
