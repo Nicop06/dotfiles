@@ -39,6 +39,9 @@ export EDITOR='/usr/bin/vim'
 [ -r /usr/share/bash-completion/bash_completion ] && . /usr/share/bash-completion/bash_completion
 [ -f /usr/share/doc/pkgfile/command-not-found.bash ] && source /usr/share/doc/pkgfile/command-not-found.bash
 
+# Virtualenv wrapper
+[ -f /usr/bin/virtualenvwrapper.sh ] && . /usr/bin/virtualenvwrapper.sh
+
 # Colored man
 man() {
  env \
@@ -53,4 +56,4 @@ man() {
 }
 
 # Local bashrc not tracked in git
-[ -f ~/.bashrc_local ] && source ~/.bashrc_local
+[ -f ~/.bashrc_local ] && . ~/.bashrc_local
