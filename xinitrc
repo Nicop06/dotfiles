@@ -25,10 +25,10 @@ pgrep -x lightsOn.sh > /dev/null || $HOME/bin/lightsOn.sh 120 &
 numlockx &
 
 # Offlineimap
-pgrep -x offlineimap > /dev/null || offlineimap -l ~/.offlineimap/logs/offlineimap.log &
+#pgrep -x offlineimap > /dev/null || offlineimap -l ~/.offlineimap/logs/offlineimap.log &
 
 # Background
-./.fehbg
+#./.fehbg
 
 session=${1:-awesome}
 
