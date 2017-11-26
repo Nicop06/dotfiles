@@ -8,6 +8,7 @@ all: installall
 installall: install installvim
 
 install:
+	ln -s $(DOTFILES)/asoundrc $(HOME)/.asoundrc || true
 	ln -s $(DOTFILES)/vimrc $(HOME)/.vimrc || true
 	ln -s $(DOTFILES)/tmux.conf $(HOME)/.tmux.conf || true
 	ln -s $(DOTFILES)/zshrc $(HOME)/.zshrc || true
@@ -27,6 +28,7 @@ installvim: ; @which git > /dev/null
 	$(HOME)/.vim/bundle/YouCompleteMe/install.py --clang-completer --system-libclang
 
 clean:
+	rm $(HOME)/.asoundrc || true
 	rm $(HOME)/.vimrc || true
 	rm $(HOME)/.tmux.conf || true
 	rm $(HOME)/.zshrc || true
