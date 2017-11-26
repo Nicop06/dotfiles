@@ -222,6 +222,7 @@ awful.screen.connect_for_each_screen(function(s)
         { -- Right widgets
             layout = wibox.layout.fixed.horizontal,
             mykeyboardlayout,
+            volume_widget,
             wibox.widget.systray(),
             mytextclock,
             s.mylayoutbox,
@@ -344,12 +345,12 @@ globalkeys = gears.table.join(
     -- Special keys
     awful.key({ }, "XF86AudioRaiseVolume",
         function ()
-          awful.util.spawn("amixer set Master 9%+")
+          awful.util.spawn("amixer set Master 5%+")
           update_volume(volume_widget, true)
         end),
     awful.key({ }, "XF86AudioLowerVolume",
         function ()
-          awful.util.spawn("amixer set Master 9%-")
+          awful.util.spawn("amixer set Master 5%-")
           update_volume(volume_widget, true)
         end),
     awful.key({ }, "XF86AudioMute",

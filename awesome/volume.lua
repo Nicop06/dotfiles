@@ -12,9 +12,18 @@ function update_volume(widget, notify)
   fd:close()
 
   local volume = string.match(status, "(%d?%d?%d)%%")
+  
+  if not volume then
+    volume = "0"
+  end
+
   volume = string.format("% 3d", volume)
 
   status = string.match(status, "%[(o[^%]]*)%]")
+  
+  if not status then
+    status = "on"
+  end
 
   if string.find(status, "on", 1, true) then
     -- For the volume numbers
