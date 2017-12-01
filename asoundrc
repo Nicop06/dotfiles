@@ -14,7 +14,7 @@ pcm.softvol {
   }
   control {
     name        "Master Playback Volume"
-    card        Generic_1
+    card        bytmax98090
   }
 }
 
@@ -25,7 +25,7 @@ pcm.softswitch {
   }
   control {
     name        "Master Playback Switch"
-    card        Generic_1
+    card        bytmax98090
   }
   resolution 2
 }
@@ -46,14 +46,9 @@ pcm.dmixer  {
  	slave {
     pcm {
       type hw
-      card "Generic_1"
+      card "bytmax98090"
       device 0
     }
-    #pcm {
-    #  type hw
-    #  card "Generic"
-    #  device 9
-    #}
 		period_time 0
 		period_size 1024
 		buffer_size 4096
@@ -67,5 +62,5 @@ pcm.dmixer  {
 
 ctl.!default {
     type hw
-    card Generic_1
+    card bytmax98090
 }
