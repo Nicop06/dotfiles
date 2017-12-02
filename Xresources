@@ -99,12 +99,3 @@ xterm*font: 8x13
 !xterm name
 
 xterm*termName: xterm-256color
-
-!dpi
-Xft.dpi: 160
-Xft.autohint: 0
-Xft.lcdfilter: lcddefault
-Xft.hintstyle: hintslight
-Xft.hinting: 1
-Xft.antialias: 1
-Xft.rgba: rgb
