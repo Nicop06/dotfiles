@@ -14,7 +14,7 @@ pcm.softvol {
   }
   control {
     name        "Master Playback Volume"
-    card        Generic
+    card        Generic_1
   }
 }
 
@@ -25,7 +25,7 @@ pcm.softswitch {
   }
   control {
     name        "Master Playback Switch"
-    card        Generic
+    card        Generic_1
   }
   resolution 2
 }
@@ -34,8 +34,8 @@ pcm.dmixer  {
  	type dmix
  	ipc_key 1024
  	slave {
-		#pcm "hw:1,0"
-		pcm "hw:0,10"
+		pcm "hw:1,0"
+		#pcm "hw:0,9"
 		period_time 0
 		period_size 1024
 		buffer_size 4096
@@ -55,5 +55,5 @@ pcm.dmixer  {
 
 ctl.!default {
     type hw
-    card Generic
+    card Generic_1
 }
