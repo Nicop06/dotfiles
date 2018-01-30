@@ -60,9 +60,9 @@ Plugin 'LaTeX-Box-Team/LaTeX-Box'
 Plugin 'jalvesaq/Nvim-R'
 
 " Haskell
-Plugin 'Shougo/vimproc'
-Plugin 'eagletmt/ghcmod-vim'
-Plugin 'eagletmt/neco-ghc'
+"Plugin 'Shougo/vimproc'
+"Plugin 'eagletmt/ghcmod-vim'
+"Plugin 'eagletmt/neco-ghc'
 
 call vundle#end()
 
