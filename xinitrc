@@ -16,7 +16,7 @@ xrdb .Xresources
 xset r rate 200 40
 
 # Launch X applications
-compton -b &
+compton &
 xscreensaver -nosplash &
 
 # Launch desktop daemons
