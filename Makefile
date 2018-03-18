@@ -20,6 +20,7 @@ install:
 	ln -s $(DOTFILES)/openbox $(CONFIG)/openbox || true
 	ln -s $(DOTFILES)/fbpanel $(CONFIG)/fbpanel || true
 	ln -s $(DOTFILES)/luakit $(CONFIG)/luakit || true
+	ln -s $(DOTFILES)/compton.conf $(CONFIG)/compton.conf || true
 
 installvim: ; @which git > /dev/null
 	mkdir -p $(HOME)/.vim/Vundle.vim || true
@@ -40,3 +41,4 @@ clean:
 	rm $(CONFIG)/openbox || true
 	rm $(CONFIG)/fbpanel || true
 	rm $(CONFIG)/luakit || true
+	rm $(CONFIG)/compton.conf || true
