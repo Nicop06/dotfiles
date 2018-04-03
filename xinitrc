@@ -17,6 +17,7 @@ xset r rate 200 40
 
 # Launch X applications
 compton &
+pgrep -x lightsOn.sh > /dev/null || $HOME/bin/lightsOn.sh 120 &
 
 # Offlineimap
 #pgrep -x offlineimap > /dev/null || offlineimap -l ~/.offlineimap/logs/offlineimap.log &
