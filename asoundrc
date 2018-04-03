@@ -35,7 +35,7 @@ pcm.asymed {
   playback.pcm "dmixer"
 	capture.pcm {
       type hw
-      card "U0x46d0x8c5"
+      card "bytmax98090"
       device 0
   }
 }
