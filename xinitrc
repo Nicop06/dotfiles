@@ -17,7 +17,7 @@ xset r rate 200 40
 
 # Launch X applications
 compton &
-xscreensaver -nosplash &
+#xscreensaver -nosplash &
 
 # Launch desktop daemons
 mpd
