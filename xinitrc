@@ -28,6 +28,9 @@ pgrep -x lightsOn.sh > /dev/null || $HOME/bin/lightsOn.sh 120 &
 # Reload gpg agent
 gpg-connect-agent reloadagent /bye &
 
+# Disable trackpad when typing
+syndaemon -i 1 -d
+
 session=${1:-awesome}
 
 case $session in
