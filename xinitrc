@@ -31,7 +31,7 @@ numlockx &
 #./.fehbg
 
 # Reload gpg agent
-gpg-connect-agent reloadagent /bye
+gpg-connect-agent reloadagent /bye &
 
 session=${1:-awesome}
 
