@@ -30,6 +30,9 @@ numlockx &
 # Background
 #./.fehbg
 
+# Reload gpg agent
+gpg-connect-agent reloadagent /bye
+
 session=${1:-awesome}
 
 case $session in
